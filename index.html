@@ -1,73 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ViralLoop - Content Repurposing Engine</title>
+    <title>ViralLoop - Enterprise Content Engine</title>
+    <meta name="description" content="AI-powered content repurposing for modern teams. Transform video to value.">
+    
+    <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-        
-        body { font-family: 'Inter', sans-serif; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        
-        /* Vertex Design System Utils */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, #f4f4f5 1px, transparent 1px),
-                              linear-gradient(to bottom, #f4f4f5 1px, transparent 1px);
-        }
-        
-        .vertex-card {
-            background: white;
-            border: 1px solid #e4e4e7; /* zinc-200 */
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        :root {
+            --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+            --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .vertex-btn-primary {
-            background-color: #18181b; /* zinc-900 */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e4e4e7; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d4d4d8; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* --- Visual Effects --- */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(24, 24, 27, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(24, 24, 27, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+
+        .bg-grid-dark {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(228, 228, 231, 0.6);
+        }
+
+        .glass-dark {
+            background: rgba(24, 24, 27, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Animations --- */
+        @keyframes enter {
+            from { opacity: 0; transform: translateY(10px) scale(0.99); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-enter { animation: enter 0.4s var(--ease-out-quart) forwards; }
+        .animate-fade { animation: fade-in 0.3s ease-out forwards; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .animate-marquee {
+            animation: marquee 40s linear infinite;
+        }
+
+        .shimmer {
+            background: linear-gradient(to right, #f4f4f5 8%, #e4e4e7 18%, #f4f4f5 33%);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite linear;
+        }
+
+        /* --- Custom Inputs --- */
+        .input-ring {
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .input-ring:focus-within {
+            box-shadow: 0 0 0 2px rgba(24, 24, 27, 0.1);
+            border-color: #18181b;
+        }
+
+        /* Custom Toggle */
+        .toggle-checkbox:checked { right: 0; border-color: #18181b; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #18181b; }
+        
+        /* Custom Checkbox */
+        .custom-checkbox:checked {
+            background-color: #18181b;
+            border-color: #18181b;
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+
+        /* Range Slider */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px; width: 16px;
+            border-radius: 50%;
+            background: #18181b;
+            cursor: grab;
+            margin-top: -6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 2px solid white;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%; height: 4px;
+            cursor: pointer;
+            background: #e4e4e7;
+            border-radius: 2px;
+        }
+
+        .hidden-view { display: none !important; }
+        
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            z-index: 50;
+            padding: 4px 8px;
+            background: #18181b;
             color: white;
+            font-size: 11px;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(4px);
             transition: all 0.2s;
         }
-        .vertex-btn-primary:hover {
-            background-color: #27272a; /* zinc-800 */
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        [data-tooltip]:hover .tooltip {
+            opacity: 1;
+            transform: translateY(0);
         }
+        
+        /* Syntax Highlighting Mock */
+        .token-keyword { color: #db2777; }
+        .token-string { color: #16a34a; }
+        .token-function { color: #2563eb; }
+        .token-comment { color: #a1a1aa; }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-
-        .hidden-view {
-            display: none;
-        }
+        /* Editor Content Styles */
+        .editor-content h1 { font-size: 1.875rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 1rem; color: #18181b; }
+        .editor-content h2 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.025em; margin-top: 2rem; margin-bottom: 0.75rem; color: #18181b; }
+        .editor-content p { margin-bottom: 1.25rem; line-height: 1.75; color: #3f3f46; }
+        .editor-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; color: #3f3f46; }
+        .editor-content li { margin-bottom: 0.5rem; }
+        .editor-content blockquote { border-left: 2px solid #e4e4e7; padding-left: 1rem; font-style: italic; color: #52525b; margin-bottom: 1.25rem; }
     </style>
 </head>
-<body class="bg-zinc-50 text-zinc-900 min-h-screen flex flex-col bg-grid selection:bg-zinc-900 selection:text-white overflow-x-hidden">
+<body class="bg-zinc-50 text-zinc-900 min-h-screen flex flex-col selection:bg-zinc-900 selection:text-white font-sans overflow-x-hidden">
 
-    <!-- VIEW: LANDING PAGE -->
-    <div id="view-landing" class="flex flex-col min-h-screen">
+    <!-- TOAST NOTIFICATION SYSTEM -->
+    <div id="toast-container" class="fixed top-6 right-6 z-[100] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- ========================================== -->
+    <!-- VIEW: MARKETING LANDING PAGE -->
+    <!-- ========================================== -->
+    <div id="view-landing" class="flex flex-col min-h-screen bg-white">
         
         <!-- Navbar -->
-        <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
-            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 bg-zinc-900 rounded-lg flex items-center justify-center text-white shadow-sm">
-                        <i data-lucide="infinity" class="w-5 h-5"></i>
+        <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-zinc-100">
+            <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+                <div class="flex items-center gap-2 group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-7 h-7 bg-zinc-900 rounded-lg flex items-center justify-center text-white shadow-lg shadow-zinc-900/10 transition-transform group-hover:rotate-12">
+                        <svg data-lucide="infinity" class="w-4 h-4"></svg>
                     </div>
-                    <span class="font-bold text-lg tracking-tight text-zinc-900">ViralLoop</span>
+                    <span class="font-bold text-base tracking-tight text-zinc-900">ViralLoop</span>
                 </div>
-                <div class="flex items-center gap-6">
-                    <a href="#features" class="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">Features</a>
-                    <a href="#pricing" class="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">Pricing</a>
-                    <button onclick="switchView('dashboard')" class="vertex-btn-primary px-5 py-2 rounded-md text-sm font-medium">
+                
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-500">
+                    <a href="#features" class="hover:text-zinc-900 transition-colors">Features</a>
+                    <a href="#customers" class="hover:text-zinc-900 transition-colors">Customers</a>
+                    <a href="#pricing" class="hover:text-zinc-900 transition-colors">Pricing</a>
+                    <a href="#blog" class="hover:text-zinc-900 transition-colors">Resources</a>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <button class="hidden md:block text-sm font-medium text-zinc-500 hover:text-zinc-900 px-3 py-2 transition-colors">Sign in</button>
+                    <button onclick="app.router.navigate('dashboard')" class="bg-zinc-900 text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-zinc-800 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0">
                         Get Started
                     </button>
                 </div>
@@ -75,458 +217,1151 @@
         </nav>
 
         <!-- Hero Section -->
-        <header class="flex-1 flex flex-col items-center justify-center text-center px-6 pt-24 pb-32">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-xs font-medium text-zinc-600 mb-8 animate-fade-in">
-                <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                v1.0 is Live
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 mb-6 max-w-4xl leading-tight animate-fade-in" style="animation-delay: 0.1s;">
-                Stop Summarizing.<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-500 to-zinc-900">Start Repurposing.</span>
-            </h1>
-            
-            <p class="text-xl text-zinc-500 max-w-2xl mb-10 leading-relaxed animate-fade-in" style="animation-delay: 0.2s;">
-                Turn one YouTube video into a week's worth of high-engagement LinkedIn posts, Twitter threads, and Blog articles instantly.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.3s;">
-                <button onclick="switchView('dashboard')" class="vertex-btn-primary px-8 py-3.5 rounded-lg text-base font-semibold flex items-center justify-center gap-2">
-                    Try ViralLoop Free
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-                <button class="bg-white border border-zinc-200 text-zinc-700 px-8 py-3.5 rounded-lg text-base font-semibold hover:bg-zinc-50 transition-colors flex items-center justify-center gap-2">
-                    <i data-lucide="play-circle" class="w-4 h-4"></i>
-                    Watch Demo
-                </button>
-            </div>
+        <div class="relative pt-20 pb-32 overflow-hidden border-b border-zinc-100">
+            <div class="absolute inset-0 bg-grid-pattern opacity-[0.3] pointer-events-none"></div>
+            <!-- Gradient Blobs -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-blue-50/60 via-purple-50/30 to-transparent rounded-[100%] blur-3xl pointer-events-none -z-10"></div>
 
-            <!-- Hero Image / Mockup -->
-            <div class="mt-20 w-full max-w-5xl bg-zinc-900 p-2 rounded-xl shadow-2xl border border-zinc-800 animate-fade-in" style="animation-delay: 0.4s;">
-                <div class="bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 aspect-[16/9] relative group cursor-pointer">
-                    <!-- Faux UI for Dashboard Preview -->
-                    <div class="absolute inset-0 flex">
-                        <div class="w-64 border-r border-zinc-800 bg-zinc-900/50 p-4 hidden md:block">
-                            <div class="h-8 w-32 bg-zinc-800 rounded mb-6"></div>
-                            <div class="space-y-3">
-                                <div class="h-12 w-full bg-zinc-800/50 rounded border border-zinc-700"></div>
-                                <div class="h-12 w-full bg-zinc-800/30 rounded border border-zinc-800"></div>
+            <div class="relative max-w-7xl mx-auto px-6 text-center z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-200 shadow-sm mb-8 animate-enter hover:border-zinc-300 transition-colors cursor-default">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-xs font-medium text-zinc-600 uppercase tracking-wide">Gen-2 Engine Live</span>
+                    <span class="w-px h-3 bg-zinc-200 mx-1"></span>
+                    <span class="text-xs text-zinc-400 flex items-center gap-1">Read Update <svg data-lucide="arrow-right" class="w-3 h-3"></svg></span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter text-zinc-900 mb-6 max-w-4xl mx-auto leading-[1.1] animate-enter" style="animation-delay: 0.1s">
+                    Turn video content into <br class="hidden md:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-br from-zinc-900 via-zinc-600 to-zinc-400">revenue-generating assets.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-10 leading-relaxed animate-enter" style="animation-delay: 0.2s">
+                    Stop manually rewriting content. Our AI engine analyzes your video, extracts viral hooks, and generates optimized posts for LinkedIn, X, and SEO blogs.
+                </p>
+
+                <div class="flex flex-col sm:flex-row animate-enter gap-3 items-center justify-center mb-16" style="animation-delay: 0.3s">
+                    <button onclick="app.router.navigate('dashboard')" class="w-full sm:w-auto hover:bg-zinc-800 transition-all flex gap-2 shadow-xl shadow-zinc-900/10 font-medium text-white bg-zinc-900 h-12 rounded-lg px-8 items-center justify-center group">
+                        Start Building Free
+                        <svg data-lucide="chevron-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></svg>
+                    </button>
+                    <button class="w-full sm:w-auto h-12 px-8 bg-white text-zinc-700 border border-zinc-200 rounded-lg font-medium hover:bg-zinc-50 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                        <svg data-lucide="play-circle" class="w-4 h-4 text-zinc-400"></svg>
+                        See how it works
+                    </button>
+                </div>
+
+                <!-- Interface Mockup -->
+                <div class="relative max-w-5xl mx-auto animate-enter" style="animation-delay: 0.5s">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent z-20 h-full w-full pointer-events-none"></div>
+                    
+                    <div class="rounded-xl bg-zinc-900 p-2 shadow-2xl border border-zinc-800 ring-1 ring-white/10 relative overflow-hidden group">
+                        <!-- Top Bar -->
+                        <div class="h-10 bg-zinc-950 border-b border-zinc-800 flex items-center px-4 gap-2 rounded-t-lg">
+                            <div class="flex gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-zinc-700"></div>
+                            </div>
+                            <div class="ml-4 flex-1 flex justify-center">
+                                <div class="bg-zinc-900 border border-zinc-800 rounded px-3 py-1 text-[10px] text-zinc-500 font-mono flex items-center gap-2">
+                                    <svg data-lucide="lock" class="w-2 h-2"></svg>
+                                    viralloop.ai/engine/v2
+                                </div>
                             </div>
                         </div>
-                        <div class="flex-1 p-8 flex flex-col items-center justify-center text-zinc-500">
-                            <i data-lucide="layout-dashboard" class="w-16 h-16 mb-4 opacity-50"></i>
-                            <p>Interactive Dashboard Preview</p>
+                        
+                        <!-- Content Area -->
+                        <div class="bg-zinc-950 rounded-b-lg overflow-hidden aspect-[16/9] relative grid grid-cols-12 text-left">
+                            
+                            <!-- Left Sidebar Mock -->
+                            <div class="col-span-3 border-r border-zinc-800 p-4 hidden md:block">
+                                <div class="flex items-center gap-2 text-zinc-400 mb-6">
+                                    <div class="w-6 h-6 rounded bg-zinc-800"></div>
+                                    <div class="h-3 w-16 bg-zinc-800 rounded"></div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="h-8 w-full bg-zinc-900 border border-zinc-800 rounded flex items-center px-2">
+                                        <div class="h-2 w-20 bg-zinc-800 rounded"></div>
+                                    </div>
+                                    <div class="h-8 w-full bg-transparent rounded flex items-center px-2">
+                                        <div class="h-2 w-16 bg-zinc-800/50 rounded"></div>
+                                    </div>
+                                    <div class="h-8 w-full bg-transparent rounded flex items-center px-2">
+                                        <div class="h-2 w-24 bg-zinc-800/50 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-6 border-t border-zinc-800 space-y-3">
+                                    <div class="flex gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                                        <div class="h-2 w-12 bg-zinc-800 rounded"></div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                                        <div class="h-2 w-16 bg-zinc-800 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Main Editor Mock -->
+                            <div class="col-span-12 md:col-span-6 p-6 border-r border-zinc-800 flex flex-col relative">
+                                <!-- Floating Process Tag -->
+                                <div class="absolute top-6 right-6 bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1.5 animate-pulse">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                                    Optimized
+                                </div>
+
+                                <div class="h-6 w-3/4 bg-zinc-800 rounded mb-4 animate-pulse"></div>
+                                <div class="space-y-2 mb-6">
+                                    <div class="h-3 w-full bg-zinc-800/50 rounded"></div>
+                                    <div class="h-3 w-full bg-zinc-800/50 rounded"></div>
+                                    <div class="h-3 w-5/6 bg-zinc-800/50 rounded"></div>
+                                </div>
+                                
+                                <div class="p-4 bg-zinc-900 border border-zinc-800 rounded-lg mb-4">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-8 h-8 rounded-full bg-zinc-800"></div>
+                                        <div class="space-y-1">
+                                            <div class="h-2 w-24 bg-zinc-800 rounded"></div>
+                                            <div class="h-2 w-16 bg-zinc-800/50 rounded"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="h-2 w-full bg-zinc-800 rounded"></div>
+                                        <div class="h-2 w-full bg-zinc-800 rounded"></div>
+                                        <div class="h-2 w-2/3 bg-zinc-800 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Config Mock -->
+                            <div class="col-span-3 p-4 hidden md:flex flex-col gap-4">
+                                <div class="p-3 bg-zinc-900 rounded border border-zinc-800">
+                                    <div class="h-2 w-16 bg-zinc-800 rounded mb-3"></div>
+                                    <div class="flex gap-1">
+                                        <div class="h-6 w-8 bg-zinc-800 rounded border border-zinc-700"></div>
+                                        <div class="h-6 w-8 bg-zinc-800 rounded"></div>
+                                        <div class="h-6 w-8 bg-zinc-800 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="p-3 bg-zinc-900 rounded border border-zinc-800">
+                                    <div class="flex justify-between mb-2">
+                                        <div class="h-2 w-12 bg-zinc-800 rounded"></div>
+                                        <div class="h-2 w-4 bg-blue-500 rounded"></div>
+                                    </div>
+                                    <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                                        <div class="h-full w-3/4 bg-blue-600"></div>
+                                    </div>
+                                </div>
+                                <!-- Code Snippet -->
+                                <div class="mt-auto font-mono text-[8px] text-zinc-600 p-2 bg-zinc-900/50 rounded">
+                                    <span class="text-purple-400">const</span> <span class="text-blue-400">generate</span> = <span class="text-yellow-400">async</span> () => {<br>
+                                    &nbsp;&nbsp;<span class="text-purple-400">await</span> ai.<span class="text-blue-400">process</span>(video);<br>
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
 
-        <!-- Features Grid -->
-        <section id="features" class="bg-white py-24 border-y border-zinc-200">
+        <!-- Trusted By Section -->
+        <div class="border-b border-zinc-100 py-10 bg-zinc-50/50">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold tracking-tight text-zinc-900 mb-4">The Content Engine</h2>
-                    <p class="text-zinc-500 max-w-2xl mx-auto">We don't just shorten content. We restructure it for specific platforms using advanced prompt engineering.</p>
+                <p class="text-center text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-8">Trusted by marketing teams at</p>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 grayscale opacity-60">
+                    <svg class="h-6" viewBox="0 0 100 30" fill="currentColor"><path d="M10,15 L20,5 L30,15 L20,25 Z M40,5 H50 V25 H40 Z M60,5 H90 V10 H65 V12 H85 V17 H65 V25 H60 Z" /></svg>
+                    <svg class="h-7" viewBox="0 0 100 30" fill="currentColor"><circle cx="15" cy="15" r="10"/><rect x="35" y="5" width="10" height="20"/><rect x="55" y="5" width="30" height="5"/><rect x="55" y="12" width="20" height="5"/><rect x="55" y="20" width="30" height="5"/></svg>
+                    <svg class="h-6" viewBox="0 0 100 30" fill="currentColor"><path d="M10,25 L20,5 L30,25 M15,18 H25 M40,5 H60 M50,5 V25 M70,5 H90 L70,25 H90"/></svg>
+                    <svg class="h-5" viewBox="0 0 100 30" fill="currentColor"><rect x="5" y="5" width="20" height="20"/><rect x="35" y="5" width="20" height="20" rx="10"/><rect x="65" y="5" width="20" height="20" rx="5"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bento Grid Features -->
+        <div class="py-24 bg-white" id="features">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-16">
+                    <h2 class="text-3xl font-semibold tracking-tight text-zinc-900 mb-4">Capabilities built for scale.</h2>
+                    <p class="text-zinc-500 max-w-xl text-lg">We don't just summarize. We extract context, tone, and intent to create content that sounds like you.</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Feature 1 -->
-                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50 hover:bg-white hover:shadow-lg transition-all duration-300 group">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="linkedin" class="w-6 h-6 text-blue-600"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Feature 1 (Large) -->
+                    <div class="md:col-span-2 rounded-2xl border border-zinc-200 bg-zinc-50 p-8 relative overflow-hidden group">
+                        <div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-zinc-100 to-transparent"></div>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 rounded-lg bg-white border border-zinc-200 flex items-center justify-center mb-6 shadow-sm text-blue-600">
+                                <svg data-lucide="zap" class="w-5 h-5"></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-zinc-900 mb-2">Instant Repurposing</h3>
+                            <p class="text-zinc-500 max-w-sm">Paste a YouTube URL and get a week's worth of content in 30 seconds. Support for shorts, long-form, and podcasts.</p>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">LinkedIn Ghostwriter</h3>
-                        <p class="text-zinc-500 leading-relaxed">Generates posts with viral hooks, meat-and-potatoes value, and engagement-driving questions.</p>
+                        <div class="absolute bottom-4 right-4 md:bottom-8 md:right-8 opacity-50 group-hover:opacity-100 transition-opacity transform group-hover:-translate-y-2 duration-500">
+                            <!-- Mini abstract UI -->
+                            <div class="w-64 bg-white rounded-lg shadow-xl border border-zinc-200 p-3 space-y-2">
+                                <div class="flex items-center gap-2 border-b border-zinc-100 pb-2">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                                    <div class="text-[10px] text-zinc-400 font-mono">youtube.com/watch?v=...</div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-5/6"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-4/6"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50 hover:bg-white hover:shadow-lg transition-all duration-300 group">
-                        <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="twitter" class="w-6 h-6 text-sky-500"></i>
+                    <div class="rounded-2xl border border-zinc-200 bg-white p-8 group hover:border-zinc-300 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-zinc-50 border border-zinc-100 flex items-center justify-center mb-6 text-purple-600">
+                            <svg data-lucide="brain-circuit" class="w-5 h-5"></svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Thread Weaver</h3>
-                        <p class="text-zinc-500 leading-relaxed">Automatically splits long videos into 6-10 tweet threads that maintain context and flow.</p>
+                        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Contextual AI</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Our model understands nuance, sarcasm, and industry jargon better than generic LLMs.</p>
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50 hover:bg-white hover:shadow-lg transition-all duration-300 group">
-                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="newspaper" class="w-6 h-6 text-amber-600"></i>
+                    <div class="rounded-2xl border border-zinc-200 bg-white p-8 group hover:border-zinc-300 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-zinc-50 border border-zinc-100 flex items-center justify-center mb-6 text-orange-600">
+                            <svg data-lucide="pen-tool" class="w-5 h-5"></svg>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">SEO Blog Builder</h3>
-                        <p class="text-zinc-500 leading-relaxed">Creates H1/H2 structured articles optimized for search engines, ready to copy-paste into CMS.</p>
+                        <h3 class="text-xl font-semibold text-zinc-900 mb-2">Tone Matching</h3>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Train the engine on your previous writing to maintain a consistent brand voice automatically.</p>
+                    </div>
+
+                    <!-- Feature 4 (Large) -->
+                    <div class="md:col-span-2 md:col-start-2 rounded-2xl border border-zinc-200 bg-zinc-900 p-8 relative overflow-hidden text-white group">
+                        <div class="absolute inset-0 bg-grid-dark opacity-10"></div>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-6 shadow-sm text-emerald-400">
+                                <svg data-lucide="bar-chart-2" class="w-5 h-5"></svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Performance Prediction</h3>
+                            <p class="text-zinc-400 max-w-sm">We score generated content against millions of viral posts to predict engagement before you publish.</p>
+                        </div>
+                         <div class="absolute bottom-0 right-0 p-8 opacity-40 group-hover:opacity-80 transition-opacity">
+                             <svg class="w-32 h-16 text-emerald-500" viewBox="0 0 100 50" fill="none" stroke="currentColor" stroke-width="2">
+                                 <path d="M0 45 L20 35 L40 40 L60 15 L80 20 L100 5" />
+                             </svg>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-zinc-50 border-t border-zinc-200 pt-16 pb-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-6 h-6 bg-zinc-900 rounded flex items-center justify-center text-white">
+                                <svg data-lucide="infinity" class="w-3 h-3"></svg>
+                            </div>
+                            <span class="font-bold text-zinc-900">ViralLoop</span>
+                        </div>
+                        <p class="text-xs text-zinc-500 leading-relaxed mb-4">Engineered in San Francisco.<br>Building the future of content workflows.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-zinc-900 text-sm mb-4">Product</h4>
+                        <ul class="space-y-2 text-sm text-zinc-500">
+                            <li><a href="#" class="hover:text-zinc-900">Features</a></li>
+                            <li><a href="#" class="hover:text-zinc-900">Integrations</a></li>
+                            <li><a href="#" class="hover:text-zinc-900">Changelog</a></li>
+                            <li><a href="#" class="hover:text-zinc-900">Docs</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-zinc-900 text-sm mb-4">Company</h4>
+                        <ul class="space-y-2 text-sm text-zinc-500">
+                            <li><a href="#" class="hover:text-zinc-900">About</a></li>
+                            <li><a href="#" class="hover:text-zinc-900">Blog</a></li>
+                            <li><a href="#" class="hover:text-zinc-900">Careers</a></li>
+                            <li><a href="#" class="hover:text-zinc-900">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-zinc-900 text-sm mb-4">Legal</h4>
+                        <ul class="space-y-2 text-sm text-zinc-500">
+                            <li><a href="#" class="hover:text-zinc-900">Privacy</a></li>
+                            <li><a href="#" class="hover:text-zinc-900">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-between border-t border-zinc-200 pt-8 gap-4">
+                    <div class="text-xs text-zinc-400">© 2024 ViralLoop Inc. All rights reserved.</div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900"><svg data-lucide="twitter" class="w-4 h-4"></svg></a>
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900"><svg data-lucide="github" class="w-4 h-4"></svg></a>
+                        <a href="#" class="text-zinc-400 hover:text-zinc-900"><svg data-lucide="linkedin" class="w-4 h-4"></svg></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <!-- VIEW: DASHBOARD (Ideally this would be separate routes in Next.js) -->
-    <div id="view-dashboard" class="flex flex-col min-h-screen hidden-view">
+
+    <!-- ========================================== -->
+    <!-- VIEW: APP DASHBOARD -->
+    <!-- ========================================== -->
+    <div id="view-dashboard" class="flex h-screen bg-zinc-50 hidden-view">
         
-        <!-- Dashboard Navbar -->
-        <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
-            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchView('landing')">
-                    <div class="w-8 h-8 bg-zinc-900 rounded-lg flex items-center justify-center text-white shadow-sm">
-                        <i data-lucide="infinity" class="w-5 h-5"></i>
+        <!-- SIDEBAR -->
+        <aside class="w-[280px] bg-white border-r border-zinc-200 flex flex-col z-30 hidden md:flex">
+            <!-- Header -->
+            <div class="p-4 h-14 flex items-center border-b border-zinc-100">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="app.router.navigate('landing')">
+                    <div class="w-6 h-6 bg-zinc-900 rounded-md flex items-center justify-center text-white shadow-sm">
+                        <svg data-lucide="infinity" class="w-3.5 h-3.5"></svg>
                     </div>
-                    <span class="font-bold text-lg tracking-tight text-zinc-900">ViralLoop</span>
-                </div>
-                
-                <div class="flex items-center gap-4">
-                    <div class="hidden md:flex items-center gap-2 text-xs font-medium text-zinc-600 bg-zinc-50 px-3 py-1.5 rounded-md border border-zinc-200 shadow-sm">
-                        <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500 fill-amber-500"></i>
-                        <span id="credits-display">2 Credits Left</span>
-                    </div>
-                    <button class="w-8 h-8 rounded-full bg-zinc-200 border border-zinc-300 flex items-center justify-center text-zinc-500 hover:text-zinc-900 transition-colors">
-                        <span class="font-medium text-xs">JD</span>
-                    </button>
+                    <span class="font-bold text-sm tracking-tight text-zinc-900">ViralLoop</span>
+                    <span class="text-[10px] bg-zinc-100 text-zinc-500 px-1.5 py-0.5 rounded font-mono border border-zinc-200 ml-auto">PRO</span>
                 </div>
             </div>
-        </nav>
 
-        <!-- Dashboard Content -->
-        <main class="flex-1 max-w-7xl mx-auto w-full px-4 md:px-6 py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-            
-            <!-- Left Column: Input & Context -->
-            <div class="lg:col-span-4 space-y-6">
+            <!-- Navigation -->
+            <div class="flex-1 overflow-y-auto p-3 space-y-6">
+                <!-- Main Group -->
+                <div class="space-y-0.5">
+                    <button onclick="app.router.switchTab('home')" id="nav-home" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-zinc-900 bg-zinc-100 rounded-lg group transition-all">
+                        <svg data-lucide="plus-circle" class="w-4 h-4 text-zinc-500 group-hover:text-zinc-900"></svg>
+                        New Project
+                    </button>
+                    <button onclick="app.router.switchTab('history')" id="nav-history" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg group transition-all">
+                        <svg data-lucide="clock" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-900"></svg>
+                        History
+                    </button>
+                    <button onclick="app.router.switchTab('templates')" id="nav-templates" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg group transition-all">
+                        <svg data-lucide="layout-grid" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-900"></svg>
+                        Templates
+                    </button>
+                </div>
+
+                <!-- Insights Group -->
+                <div>
+                    <h3 class="px-3 text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">Intelligence</h3>
+                    <div class="space-y-0.5">
+                        <button onclick="app.router.switchTab('analytics')" id="nav-analytics" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg group transition-all">
+                            <svg data-lucide="bar-chart-2" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-900"></svg>
+                            Analytics
+                        </button>
+                        <button onclick="app.router.switchTab('seo')" id="nav-seo" class="nav-item w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg group transition-all">
+                            <svg data-lucide="search" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-900"></svg>
+                            SEO Keyword Tracker
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Team Group -->
+                <div>
+                    <h3 class="px-3 text-[11px] font-semibold text-zinc-400 uppercase tracking-wider mb-2">Workspace</h3>
+                    <div class="space-y-0.5">
+                        <button class="w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg group transition-all">
+                            <svg data-lucide="users" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-900"></svg>
+                            Team Members
+                            <span class="ml-auto w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        </button>
+                        <button class="w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 rounded-lg group transition-all">
+                            <svg data-lucide="folder-closed" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-900"></svg>
+                            Assets
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer / Usage -->
+            <div class="p-4 border-t border-zinc-100 bg-zinc-50/50">
+                <div class="mb-4">
+                    <div class="flex items-center justify-between text-[11px] mb-1.5">
+                        <span class="font-medium text-zinc-600">Credits Used</span>
+                        <span class="font-mono text-zinc-500">850/1000</span>
+                    </div>
+                    <div class="w-full bg-zinc-200 rounded-full h-1.5 overflow-hidden">
+                        <div class="bg-zinc-800 h-full rounded-full w-[85%]"></div>
+                    </div>
+                </div>
                 
-                <!-- Input Section -->
-                <div class="space-y-4">
-                    <div>
-                        <h1 class="text-2xl font-bold tracking-tight text-zinc-900">New Project</h1>
-                        <p class="text-zinc-500 text-sm mt-1">Paste a YouTube URL to ghostwrite content.</p>
+                <button onclick="app.router.switchTab('settings')" class="flex items-center gap-3 w-full p-2 hover:bg-white border border-transparent hover:border-zinc-200 hover:shadow-sm rounded-lg transition-all text-left group">
+                    <div class="relative">
+                         <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-zinc-200 to-zinc-300 flex items-center justify-center text-xs font-semibold text-zinc-600 border border-zinc-200 shadow-sm">JD</div>
+                         <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+                    </div>
+                    <div class="flex-1 overflow-hidden">
+                        <p class="text-sm font-medium text-zinc-900 truncate">John Doe</p>
+                        <p class="text-[10px] text-zinc-500 truncate">john@example.com</p>
+                    </div>
+                    <svg data-lucide="settings" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 transition-colors"></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN AREA -->
+        <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+            
+            <!-- Mobile Header -->
+            <header class="h-14 bg-white border-b border-zinc-200 flex md:hidden items-center justify-between px-4 z-20 flex-shrink-0">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 bg-zinc-900 rounded-md flex items-center justify-center text-white">
+                        <svg data-lucide="infinity" class="w-3.5 h-3.5"></svg>
+                    </div>
+                    <span class="font-bold tracking-tight text-zinc-900">ViralLoop</span>
+                </div>
+                <button class="p-2 text-zinc-500"><svg data-lucide="menu" class="w-5 h-5"></svg></button>
+            </header>
+
+            <!-- TAB: HOME / GENERATOR -->
+            <div id="tab-home" class="flex-1 flex flex-col md:flex-row overflow-hidden animate-enter">
+                
+                <!-- Left Panel: Configuration -->
+                <div class="w-full md:w-[400px] bg-white border-r border-zinc-200 flex flex-col z-10 shadow-[4px_0_24px_-12px_rgba(0,0,0,0.05)]">
+                    <div class="h-14 border-b border-zinc-100 flex items-center px-6 justify-between flex-shrink-0">
+                        <h2 class="font-semibold text-sm text-zinc-900">Project Setup</h2>
+                        <button class="text-xs text-zinc-400 hover:text-zinc-900 underline">Reset</button>
                     </div>
 
-                    <div class="vertex-card p-1.5 rounded-xl shadow-sm bg-white">
-                        <div class="relative">
-                            <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-                                <i data-lucide="youtube" class="w-4 h-4 text-zinc-400"></i>
+                    <div class="p-6 space-y-6 flex-1 overflow-y-auto">
+                        <!-- URL Input -->
+                        <div class="space-y-3">
+                            <label class="text-xs font-medium text-zinc-700 flex items-center justify-between">
+                                Source URL
+                                <span class="text-[10px] text-zinc-400 bg-zinc-100 px-1.5 rounded">YouTube / Vimeo</span>
+                            </label>
+                            <div class="relative group">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <svg data-lucide="link" class="h-4 w-4 text-zinc-400 group-focus-within:text-zinc-600 transition-colors"></svg>
+                                </div>
+                                <input type="text" id="url-input" class="input-ring block w-full pl-10 pr-10 py-2.5 sm:text-sm border-zinc-200 rounded-lg text-zinc-900 placeholder:text-zinc-400 bg-zinc-50 focus:bg-white transition-all" placeholder="Paste video link..." value="https://youtube.com/watch?v=dQw4w9WgXcQ">
+                                <div class="absolute inset-y-0 right-0 pr-2 flex items-center">
+                                    <button class="p-1 hover:bg-zinc-200 rounded text-zinc-400 hover:text-zinc-600 transition-colors">
+                                        <svg data-lucide="x" class="h-3 w-3"></svg>
+                                    </button>
+                                </div>
                             </div>
-                            <input type="text" 
-                                   id="url-input"
-                                   placeholder="https://youtube.com/watch?v=..." 
-                                   class="w-full pl-10 pr-4 py-2.5 bg-zinc-50 border border-transparent rounded-lg text-sm transition-all focus:outline-none focus:border-zinc-900 focus:bg-white placeholder:text-zinc-400 font-medium text-zinc-900" 
-                                   value="https://youtu.be/dQw4w9WgXcQ">
                         </div>
-                        <button onclick="generateContent()" id="generate-btn" class="w-full mt-2 bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2 shadow-sm active:scale-[0.99]">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+
+                        <!-- Video Preview Component (Hidden initially) -->
+                        <div id="video-preview" class="hidden border border-zinc-200 rounded-xl overflow-hidden bg-white shadow-sm ring-1 ring-black/5">
+                            <div class="aspect-video bg-zinc-900 relative group cursor-pointer overflow-hidden">
+                                <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" class="w-full h-full object-cover opacity-80 transition-all duration-500 group-hover:scale-105 group-hover:opacity-60">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-lg transition-transform group-hover:scale-110">
+                                        <svg data-lucide="play" class="w-4 h-4 text-white fill-white"></svg>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/80 backdrop-blur text-white text-[10px] font-medium rounded border border-white/10">3:32</div>
+                            </div>
+                            <div class="p-3 bg-white">
+                                <div class="flex gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-zinc-100 flex-shrink-0 overflow-hidden">
+                                         <img src="https://ui-avatars.com/api/?name=Rick+Astley&background=random" class="w-full h-full">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="font-medium text-xs text-zinc-900 truncate" title="Rick Astley - Never Gonna Give You Up">Rick Astley - Never Gonna Give You Up</h3>
+                                        <p class="text-[10px] text-zinc-500 truncate">Official Music Video • 1.2B views</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Settings Accordion -->
+                        <div class="border-t border-zinc-100 pt-6 space-y-5">
+                            <div>
+                                <label class="text-xs font-medium text-zinc-700 mb-2.5 flex items-center gap-2">
+                                    Content Formats
+                                    <svg data-lucide="help-circle" class="w-3 h-3 text-zinc-300" data-tooltip="Select multiple"></svg>
+                                </label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" checked class="custom-checkbox peer sr-only">
+                                        <div class="p-3 rounded-lg border border-zinc-200 bg-white hover:border-zinc-300 peer-checked:border-zinc-900 peer-checked:ring-1 peer-checked:ring-zinc-900 transition-all">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <svg data-lucide="linkedin" class="w-4 h-4 text-zinc-500 peer-checked:text-zinc-900"></svg>
+                                            </div>
+                                            <span class="text-xs font-medium text-zinc-600 peer-checked:text-zinc-900">LinkedIn Post</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" class="custom-checkbox peer sr-only">
+                                        <div class="p-3 rounded-lg border border-zinc-200 bg-white hover:border-zinc-300 peer-checked:border-zinc-900 peer-checked:ring-1 peer-checked:ring-zinc-900 transition-all">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <svg data-lucide="twitter" class="w-4 h-4 text-zinc-500 peer-checked:text-zinc-900"></svg>
+                                            </div>
+                                            <span class="text-xs font-medium text-zinc-600 peer-checked:text-zinc-900">X Thread</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" class="custom-checkbox peer sr-only">
+                                        <div class="p-3 rounded-lg border border-zinc-200 bg-white hover:border-zinc-300 peer-checked:border-zinc-900 peer-checked:ring-1 peer-checked:ring-zinc-900 transition-all">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <svg data-lucide="file-text" class="w-4 h-4 text-zinc-500 peer-checked:text-zinc-900"></svg>
+                                            </div>
+                                            <span class="text-xs font-medium text-zinc-600 peer-checked:text-zinc-900">Blog Article</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" checked class="custom-checkbox peer sr-only">
+                                        <div class="p-3 rounded-lg border border-zinc-200 bg-white hover:border-zinc-300 peer-checked:border-zinc-900 peer-checked:ring-1 peer-checked:ring-zinc-900 transition-all">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <svg data-lucide="list" class="w-4 h-4 text-zinc-500 peer-checked:text-zinc-900"></svg>
+                                            </div>
+                                            <span class="text-xs font-medium text-zinc-600 peer-checked:text-zinc-900">Summary</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Sliders -->
+                            <div>
+                                <div class="flex justify-between mb-3">
+                                    <label class="text-xs font-medium text-zinc-700">Creativity</label>
+                                    <span class="text-[10px] text-zinc-500 font-mono bg-zinc-100 px-1.5 rounded">0.7</span>
+                                </div>
+                                <input type="range" min="0" max="1" step="0.1" value="0.7" class="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between mt-1 text-[10px] text-zinc-400">
+                                    <span>Precise</span>
+                                    <span>Creative</span>
+                                </div>
+                            </div>
+
+                            <!-- Tone Select -->
+                            <div>
+                                <label class="text-xs font-medium text-zinc-700 mb-2 block">Brand Voice</label>
+                                <select class="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm text-zinc-700 focus:outline-none focus:border-zinc-400 focus:bg-white transition-all appearance-none cursor-pointer">
+                                    <option>Professional & Authoritative</option>
+                                    <option>Casual & Friendly</option>
+                                    <option>Witty & Viral</option>
+                                    <option>Educational & Detailed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 border-t border-zinc-200 bg-zinc-50/30">
+                        <button onclick="app.generator.start()" id="generate-btn" class="w-full bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-3 rounded-lg text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-zinc-900/10 active:scale-[0.98]">
+                            <svg data-lucide="sparkles" class="w-4 h-4"></svg>
                             Generate Content
                         </button>
                     </div>
                 </div>
 
-                <!-- Video Context Card (Hidden initially) -->
-                <div id="video-card" class="vertex-card p-4 rounded-xl space-y-3 hidden">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Source Video</span>
-                        <span class="text-xs text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-100 font-medium">Processed</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <div class="w-24 h-16 bg-zinc-900 rounded-md overflow-hidden relative flex-shrink-0 group">
-                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" class="w-full h-full object-cover opacity-80">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i data-lucide="play-circle" class="w-6 h-6 text-white opacity-80"></i>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center">
-                            <h3 class="font-semibold text-sm leading-tight line-clamp-2 text-zinc-900">Rick Astley - Never Gonna Give You Up (Official Music Video)</h3>
-                            <div class="flex items-center gap-2 mt-1.5">
-                                <div class="flex items-center gap-1 text-zinc-500">
-                                    <i data-lucide="clock" class="w-3 h-3"></i>
-                                    <span class="text-xs">3:32</span>
-                                </div>
-                                <span class="text-zinc-300 text-[10px]">•</span>
-                                <span class="text-xs text-zinc-500">1.2B Views</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent History -->
-                <div class="pt-4 border-t border-zinc-200 space-y-3">
-                    <div class="flex items-center justify-between px-1">
-                        <h3 class="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Recent Projects</h3>
-                    </div>
-                    <div class="space-y-1">
-                        <button class="w-full text-left p-2.5 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-zinc-200 transition-all group flex items-start gap-3">
-                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                            <div class="overflow-hidden">
-                                <p class="text-sm font-medium text-zinc-600 group-hover:text-zinc-900 truncate">Alex Hormozi - $100M Leads Strategy</p>
-                                <p class="text-xs text-zinc-400 mt-0.5 truncate">Generated LinkedIn • 2h ago</p>
-                            </div>
-                        </button>
-                        <button class="w-full text-left p-2.5 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-zinc-200 transition-all group flex items-start gap-3">
-                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-zinc-300"></div>
-                            <div class="overflow-hidden">
-                                <p class="text-sm font-medium text-zinc-600 group-hover:text-zinc-900 truncate">MKBHD - iPhone 15 Review</p>
-                                <p class="text-xs text-zinc-400 mt-0.5 truncate">Generated Blog • 1d ago</p>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column: Editor Interface -->
-            <div class="lg:col-span-8 h-[calc(100vh-8rem)] min-h-[600px] vertex-card rounded-xl flex flex-col overflow-hidden shadow-sm relative">
-                
-                <!-- Loading Overlay -->
-                <div id="loading-overlay" class="absolute inset-0 bg-white/90 backdrop-blur-sm z-20 flex flex-col items-center justify-center hidden">
-                    <div class="w-8 h-8 border-4 border-zinc-200 border-t-zinc-900 rounded-full animate-spin mb-4"></div>
-                    <p class="text-zinc-900 font-semibold animate-pulse">Ghostwriting Content...</p>
-                    <p class="text-zinc-500 text-sm mt-1">Analyzing transcript & tonality</p>
-                </div>
-
-                <!-- Editor Toolbar -->
-                <div class="flex items-center justify-between border-b border-zinc-200 bg-zinc-50/50 p-2 overflow-x-auto">
-                    <!-- Mode Tabs -->
-                    <div class="flex items-center gap-1" id="mode-tabs">
-                        <button onclick="setMode('summary')" id="tab-summary" class="mode-tab active px-3 py-1.5 text-xs font-medium text-zinc-900 bg-white shadow-sm border border-zinc-200 rounded-md flex items-center gap-2">
-                            <i data-lucide="file-text" class="w-3.5 h-3.5 text-blue-600"></i> Summary
-                        </button>
-                        <button onclick="setMode('linkedin')" id="tab-linkedin" class="mode-tab px-3 py-1.5 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100/80 rounded-md flex items-center gap-2 transition-colors border border-transparent">
-                            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn
-                            <i data-lucide="lock" class="w-3 h-3 text-zinc-400 ml-1"></i>
-                        </button>
-                        <button onclick="setMode('twitter')" id="tab-twitter" class="mode-tab px-3 py-1.5 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100/80 rounded-md flex items-center gap-2 transition-colors border border-transparent">
-                            <i data-lucide="twitter" class="w-3.5 h-3.5"></i> Twitter
-                            <i data-lucide="lock" class="w-3 h-3 text-zinc-400 ml-1"></i>
-                        </button>
-                        <button onclick="setMode('blog')" id="tab-blog" class="mode-tab px-3 py-1.5 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100/80 rounded-md flex items-center gap-2 transition-colors border border-transparent">
-                            <i data-lucide="newspaper" class="w-3.5 h-3.5"></i> Blog Post
-                            <i data-lucide="lock" class="w-3 h-3 text-zinc-400 ml-1"></i>
-                        </button>
-                    </div>
-
-                    <div class="flex items-center gap-2 pr-2">
-                        <span class="text-[10px] font-mono text-zinc-400">v1.0.2</span>
-                    </div>
-                </div>
-
-                <!-- Content Area -->
-                <div class="flex-1 bg-white p-8 overflow-y-auto relative" id="content-area">
+                <!-- Right Panel: Editor Workspace -->
+                <div class="flex-1 bg-zinc-50 flex flex-col relative overflow-hidden">
                     
-                    <!-- Placeholder State -->
-                    <div id="placeholder-content" class="h-full flex flex-col items-center justify-center text-center opacity-60">
-                        <div class="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
-                            <i data-lucide="sparkles" class="w-8 h-8 text-zinc-300"></i>
+                    <!-- Editor Toolbar -->
+                    <div class="h-14 bg-white border-b border-zinc-200 flex items-center justify-between px-4 shadow-sm z-20 flex-shrink-0">
+                        <div class="flex items-center gap-4">
+                            <!-- Tabs -->
+                            <div class="flex items-center bg-zinc-100 p-1 rounded-lg">
+                                <button onclick="app.editor.setFormat('summary')" id="fmt-summary" class="fmt-btn px-3 py-1.5 text-xs font-medium rounded-md bg-white text-zinc-900 shadow-sm transition-all ring-1 ring-black/5">Summary</button>
+                                <button onclick="app.editor.setFormat('linkedin')" id="fmt-linkedin" class="fmt-btn px-3 py-1.5 text-xs font-medium rounded-md text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-all">LinkedIn</button>
+                                <button onclick="app.editor.setFormat('twitter')" id="fmt-twitter" class="fmt-btn px-3 py-1.5 text-xs font-medium rounded-md text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50 transition-all">Thread</button>
+                            </div>
+                            
+                            <div class="h-4 w-px bg-zinc-200"></div>
+                            
+                            <!-- Rich Text Controls (Visual Only) -->
+                            <div class="flex items-center gap-1">
+                                <button class="p-1.5 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 rounded transition-colors"><svg data-lucide="bold" class="w-3.5 h-3.5"></svg></button>
+                                <button class="p-1.5 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 rounded transition-colors"><svg data-lucide="italic" class="w-3.5 h-3.5"></svg></button>
+                                <button class="p-1.5 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 rounded transition-colors"><svg data-lucide="link-2" class="w-3.5 h-3.5"></svg></button>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-medium text-zinc-900">Ready to Repurpose</h3>
-                        <p class="text-zinc-500 max-w-xs mt-1">Enter a YouTube URL and hit generate to see the magic happen.</p>
+                        
+                        <div class="flex items-center gap-2">
+                             <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 text-green-700 border border-green-200 rounded text-xs font-medium opacity-0 transition-opacity duration-500" id="save-indicator">
+                                <svg data-lucide="check" class="w-3 h-3"></svg> Saved
+                            </div>
+                            <button class="p-2 text-zinc-400 hover:text-zinc-600 hover:bg-zinc-100 rounded-lg transition-colors border border-transparent hover:border-zinc-200" title="Copy Text">
+                                <svg data-lucide="copy" class="w-4 h-4"></svg>
+                            </button>
+                            <button class="bg-white border border-zinc-200 text-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-zinc-50 transition-colors shadow-sm flex items-center gap-2">
+                                Export <svg data-lucide="download" class="w-3 h-3"></svg>
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- AI Output -->
-                    <div id="generated-content" class="max-w-2xl mx-auto hidden">
-                        <!-- Metadata Header -->
-                        <div class="flex items-center justify-between mb-8 pb-4 border-b border-zinc-100">
-                            <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
-                                    <i data-lucide="bot" class="w-4 h-4 text-blue-600"></i>
+                    <!-- Editor Canvas -->
+                    <div class="flex-1 overflow-y-auto p-8 md:p-12 relative scroll-smooth">
+                        
+                        <!-- Empty State -->
+                        <div id="empty-state" class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 animate-enter">
+                            <div class="w-24 h-24 bg-gradient-to-b from-zinc-50 to-zinc-100 border border-zinc-200 rounded-2xl flex items-center justify-center mb-6 shadow-inner group cursor-default">
+                                <svg data-lucide="layout" class="w-8 h-8 text-zinc-300 group-hover:text-zinc-400 transition-colors"></svg>
+                            </div>
+                            <h3 class="text-lg font-semibold text-zinc-900">Workspace Ready</h3>
+                            <p class="text-zinc-500 max-w-sm mt-2 text-sm leading-relaxed">Paste a URL on the left sidebar to start the generation engine. We'll handle the rest.</p>
+                        </div>
+
+                        <!-- Loading State -->
+                        <div id="loading-state" class="hidden max-w-2xl mx-auto mt-20">
+                             <div class="border border-zinc-200 bg-white p-6 rounded-xl shadow-sm mb-6 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full border-2 border-zinc-100 border-t-zinc-900 animate-spin"></div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between mb-1">
+                                        <h3 class="text-sm font-semibold text-zinc-900 animate-pulse">Analyzing Video Transcript...</h3>
+                                        <span class="text-xs font-mono text-zinc-500">45%</span>
+                                    </div>
+                                    <div class="h-1.5 w-full bg-zinc-100 rounded-full overflow-hidden">
+                                        <div class="h-full bg-zinc-900 w-[45%] rounded-full animate-marquee"></div>
+                                    </div>
+                                </div>
+                             </div>
+                             
+                             <!-- Skeleton Lines -->
+                             <div class="space-y-4 px-2">
+                                 <div class="h-8 shimmer rounded w-1/3 mb-6"></div>
+                                 <div class="h-4 shimmer rounded w-full"></div>
+                                 <div class="h-4 shimmer rounded w-full"></div>
+                                 <div class="h-4 shimmer rounded w-5/6"></div>
+                                 <div class="h-4 shimmer rounded w-4/6"></div>
+                                 <div class="h-32 shimmer rounded w-full mt-6"></div>
+                             </div>
+                        </div>
+
+                        <!-- Content Area -->
+                        <div id="generated-content" class="hidden max-w-[800px] mx-auto bg-white min-h-[1000px] shadow-sm border border-zinc-200 rounded-xl p-12 animate-enter editor-content selection:bg-yellow-100">
+                            <!-- Injected content goes here -->
+                        </div>
+                        
+                        <div class="h-20"></div> <!-- Bottom Spacer -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ANALYTICS -->
+            <div id="tab-analytics" class="flex-1 bg-zinc-50 p-6 overflow-y-auto hidden">
+                <div class="max-w-6xl mx-auto space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold tracking-tight text-zinc-900">Performance Analytics</h2>
+                            <p class="text-sm text-zinc-500 mt-1">Track the engagement of your repurposed content.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <select class="bg-white border border-zinc-200 text-zinc-700 text-sm rounded-lg px-3 py-2 outline-none">
+                                <option>Last 30 Days</option>
+                                <option>Last 7 Days</option>
+                                <option>This Year</option>
+                            </select>
+                            <button class="bg-white border border-zinc-200 text-zinc-700 text-sm rounded-lg px-3 py-2 hover:bg-zinc-50 flex gap-2 items-center">
+                                <svg data-lucide="download" class="w-4 h-4"></svg> Export Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-blue-50 rounded-lg text-blue-600"><svg data-lucide="eye" class="w-4 h-4"></svg></div>
+                                <span class="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                    <svg data-lucide="trending-up" class="w-3 h-3"></svg> +12%
                                 </span>
-                                <div>
-                                    <p class="text-xs font-semibold text-zinc-900">ViralLoop AI</p>
-                                    <p class="text-[10px] text-zinc-400">Generated via Gemini 1.5 Flash</p>
+                            </div>
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-1">124.5K</h3>
+                            <p class="text-xs text-zinc-500">Total Impressions</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-purple-50 rounded-lg text-purple-600"><svg data-lucide="mouse-pointer-2" class="w-4 h-4"></svg></div>
+                                <span class="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                    <svg data-lucide="trending-up" class="w-3 h-3"></svg> +5.2%
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-1">8.2%</h3>
+                            <p class="text-xs text-zinc-500">Avg. CTR</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-orange-50 rounded-lg text-orange-600"><svg data-lucide="clock" class="w-4 h-4"></svg></div>
+                                <span class="text-xs font-medium text-red-600 bg-red-50 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                    <svg data-lucide="trending-down" class="w-3 h-3"></svg> -1.4%
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-1">1m 45s</h3>
+                            <p class="text-xs text-zinc-500">Avg. Read Time</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl border border-zinc-200 shadow-sm">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-2 bg-zinc-100 rounded-lg text-zinc-600"><svg data-lucide="check-circle" class="w-4 h-4"></svg></div>
+                                <span class="text-xs font-medium text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full">
+                                    Neutral
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-1">45</h3>
+                            <p class="text-xs text-zinc-500">Posts Generated</p>
+                        </div>
+                    </div>
+
+                    <!-- Charts Area -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Main Chart -->
+                        <div class="lg:col-span-2 bg-white p-6 rounded-xl border border-zinc-200 shadow-sm">
+                            <h3 class="font-semibold text-zinc-900 mb-6">Engagement Trends</h3>
+                            <div class="h-64 w-full flex items-end justify-between gap-2 px-2">
+                                <!-- CSS Bar Chart Logic generated in JS, keeping simple placeholder here -->
+                                <div class="w-full h-[30%] bg-zinc-100 hover:bg-zinc-200 rounded-t transition-all relative group"><div class="tooltip">Mon</div></div>
+                                <div class="w-full h-[50%] bg-zinc-100 hover:bg-zinc-200 rounded-t transition-all relative group"><div class="tooltip">Tue</div></div>
+                                <div class="w-full h-[45%] bg-zinc-100 hover:bg-zinc-200 rounded-t transition-all relative group"><div class="tooltip">Wed</div></div>
+                                <div class="w-full h-[70%] bg-zinc-100 hover:bg-zinc-200 rounded-t transition-all relative group"><div class="tooltip">Thu</div></div>
+                                <div class="w-full h-[85%] bg-zinc-800 hover:bg-zinc-700 rounded-t transition-all relative group"><div class="tooltip">Fri</div></div>
+                                <div class="w-full h-[60%] bg-zinc-100 hover:bg-zinc-200 rounded-t transition-all relative group"><div class="tooltip">Sat</div></div>
+                                <div class="w-full h-[40%] bg-zinc-100 hover:bg-zinc-200 rounded-t transition-all relative group"><div class="tooltip">Sun</div></div>
+                            </div>
+                            <div class="flex justify-between mt-4 text-xs text-zinc-400">
+                                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                            </div>
+                        </div>
+
+                        <!-- Top Content -->
+                        <div class="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm">
+                            <h3 class="font-semibold text-zinc-900 mb-6">Top Performing</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xs">1</div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-zinc-900 truncate">10 Ways to Scale SaaS</p>
+                                        <p class="text-xs text-zinc-500">LinkedIn • 45k views</p>
+                                    </div>
+                                    <svg data-lucide="trending-up" class="w-4 h-4 text-green-500"></svg>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded bg-zinc-50 text-zinc-500 flex items-center justify-center font-bold text-xs">2</div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-zinc-900 truncate">AI Ethics Thread</p>
+                                        <p class="text-xs text-zinc-500">Twitter • 32k views</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded bg-zinc-50 text-zinc-500 flex items-center justify-center font-bold text-xs">3</div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-zinc-900 truncate">Product Launch Recap</p>
+                                        <p class="text-xs text-zinc-500">Blog • 12k views</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex gap-1">
-                                <button class="p-1.5 hover:bg-zinc-100 rounded text-zinc-400 hover:text-zinc-600 transition-colors">
-                                    <i data-lucide="thumbs-up" class="w-4 h-4"></i>
-                                </button>
-                                <button class="p-1.5 hover:bg-zinc-100 rounded text-zinc-400 hover:text-zinc-600 transition-colors">
-                                    <i data-lucide="thumbs-down" class="w-4 h-4"></i>
-                                </button>
-                            </div>
+                            <button class="w-full mt-6 py-2 border border-zinc-200 rounded-lg text-xs font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                                View All Posts
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TAB: SETTINGS -->
+            <div id="tab-settings" class="flex-1 bg-zinc-50 p-6 overflow-y-auto hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold tracking-tight text-zinc-900 mb-6">Settings</h2>
+                    
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Sidebar -->
+                        <div class="w-full md:w-64 space-y-1">
+                            <button class="w-full text-left px-3 py-2 text-sm font-medium bg-white text-zinc-900 rounded-lg shadow-sm border border-zinc-200">General</button>
+                            <button class="w-full text-left px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors">Team & Members</button>
+                            <button class="w-full text-left px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors">Billing</button>
+                            <button class="w-full text-left px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors">Integrations</button>
+                            <button class="w-full text-left px-3 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 rounded-lg transition-colors">API Keys</button>
                         </div>
 
-                        <!-- The Text Container -->
-                        <article class="prose prose-zinc prose-sm" id="markdown-output">
-                            <!-- Dynamic Content Goes Here -->
-                        </article>
-                        
-                        <div class="h-12"></div> <!-- Spacer -->
+                        <!-- Content -->
+                        <div class="flex-1 space-y-6">
+                            
+                            <!-- Profile Card -->
+                            <div class="bg-white rounded-xl border border-zinc-200 shadow-sm p-6">
+                                <h3 class="text-base font-semibold text-zinc-900 mb-4">Profile Information</h3>
+                                <div class="flex items-center gap-6 mb-6">
+                                    <div class="w-20 h-20 rounded-full bg-zinc-100 flex items-center justify-center text-2xl font-bold text-zinc-400 border border-zinc-200">JD</div>
+                                    <div class="space-y-2">
+                                        <button class="px-3 py-1.5 border border-zinc-200 rounded-md text-xs font-medium text-zinc-700 hover:bg-zinc-50">Change Avatar</button>
+                                        <button class="px-3 py-1.5 text-xs font-medium text-red-600 hover:text-red-700">Remove</button>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label class="text-xs font-medium text-zinc-700">First Name</label>
+                                        <input type="text" value="John" class="w-full px-3 py-2 border border-zinc-200 rounded-lg text-sm focus:outline-none focus:border-zinc-400">
+                                    </div>
+                                    <div class="space-y-1">
+                                        <label class="text-xs font-medium text-zinc-700">Last Name</label>
+                                        <input type="text" value="Doe" class="w-full px-3 py-2 border border-zinc-200 rounded-lg text-sm focus:outline-none focus:border-zinc-400">
+                                    </div>
+                                    <div class="col-span-2 space-y-1">
+                                        <label class="text-xs font-medium text-zinc-700">Email Address</label>
+                                        <input type="email" value="john.doe@example.com" class="w-full px-3 py-2 border border-zinc-200 rounded-lg text-sm focus:outline-none focus:border-zinc-400">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Preferences -->
+                            <div class="bg-white rounded-xl border border-zinc-200 shadow-sm p-6">
+                                <h3 class="text-base font-semibold text-zinc-900 mb-4">Preferences</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between py-2">
+                                        <div>
+                                            <p class="text-sm font-medium text-zinc-900">Email Notifications</p>
+                                            <p class="text-xs text-zinc-500">Receive weekly digests of your content performance.</p>
+                                        </div>
+                                        <label class="cursor-pointer relative inline-flex items-center">
+                                            <input type="checkbox" checked class="toggle-checkbox sr-only">
+                                            <div class="toggle-label w-9 h-5 bg-zinc-200 rounded-full transition-colors"></div>
+                                            <div class="w-3 h-3 bg-white rounded-full shadow absolute top-1 left-1 transition-all"></div>
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center justify-between py-2 border-t border-zinc-50">
+                                        <div>
+                                            <p class="text-sm font-medium text-zinc-900">Auto-Save</p>
+                                            <p class="text-xs text-zinc-500">Automatically save drafts while editing.</p>
+                                        </div>
+                                        <label class="cursor-pointer relative inline-flex items-center">
+                                            <input type="checkbox" checked class="toggle-checkbox sr-only">
+                                            <div class="toggle-label w-9 h-5 bg-zinc-200 rounded-full transition-colors"></div>
+                                            <div class="w-3 h-3 bg-white rounded-full shadow absolute top-1 left-1 transition-all"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end gap-3 pt-4">
+                                <button class="px-4 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Cancel</button>
+                                <button class="px-4 py-2 bg-zinc-900 text-white text-sm font-medium rounded-lg hover:bg-zinc-800 transition-colors shadow-sm">Save Changes</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Footer Actions -->
-                <div class="p-4 bg-white border-t border-zinc-200 flex justify-between items-center">
-                    <div class="flex items-center gap-2">
-                        <button class="p-2 hover:bg-zinc-100 rounded-lg text-zinc-500 transition-colors group relative" title="Regenerate">
-                            <i data-lucide="refresh-ccw" class="w-4 h-4 group-hover:rotate-180 transition-transform duration-500"></i>
-                        </button>
-                        <div class="h-4 w-px bg-zinc-200 mx-1"></div>
-                        <span class="text-xs text-zinc-400 font-medium ml-1" id="word-count">Words: 0</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <button class="px-4 py-2 bg-white border border-zinc-200 text-zinc-700 text-xs font-medium rounded-lg hover:bg-zinc-50 hover:border-zinc-300 transition-colors shadow-sm">
-                            Save Draft
-                        </button>
-                        <button onclick="copyToClipboard()" class="px-4 py-2 bg-zinc-900 text-white text-xs font-medium rounded-lg hover:bg-zinc-800 transition-colors flex items-center gap-2 shadow-sm">
-                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                            Copy Text
-                        </button>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- TAB: HISTORY (PLACEHOLDER FOR STRUCTURE) -->
+            <div id="tab-history" class="hidden flex-1 bg-white p-6 overflow-y-auto">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-6">
+                         <h2 class="text-2xl font-bold tracking-tight text-zinc-900">History</h2>
+                         <div class="relative">
+                             <svg data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400"></svg>
+                             <input type="text" placeholder="Search archives..." class="pl-9 pr-4 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm w-64 focus:outline-none focus:ring-1 focus:ring-zinc-900">
+                         </div>
+                    </div>
+                    <!-- Table -->
+                    <div class="border border-zinc-200 rounded-xl overflow-hidden shadow-sm">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-zinc-50 border-b border-zinc-200 text-zinc-500 font-medium">
+                                <tr>
+                                    <th class="px-6 py-3">Content Title</th>
+                                    <th class="px-6 py-3">Source</th>
+                                    <th class="px-6 py-3">Created</th>
+                                    <th class="px-6 py-3">Status</th>
+                                    <th class="px-6 py-3 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-zinc-100 bg-white" id="history-list">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+             <!-- TAB: TEMPLATES -->
+            <div id="tab-templates" class="hidden flex-1 bg-zinc-50 p-6 overflow-y-auto">
+                <div class="max-w-6xl mx-auto">
+                     <h2 class="text-2xl font-bold tracking-tight text-zinc-900 mb-2">Templates</h2>
+                     <p class="text-zinc-500 mb-8">Start with a pre-configured framework for your content.</p>
+                     
+                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                         <!-- Template Card 1 -->
+                         <div class="bg-white border border-zinc-200 rounded-xl overflow-hidden group hover:shadow-md transition-all cursor-pointer">
+                             <div class="h-32 bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
+                                 <svg data-lucide="linkedin" class="w-10 h-10 text-blue-600 opacity-80 group-hover:scale-110 transition-transform"></svg>
+                             </div>
+                             <div class="p-5">
+                                 <h3 class="font-semibold text-zinc-900">Viral Storytelling</h3>
+                                 <p class="text-xs text-zinc-500 mt-1 mb-4">Structure your post with a hook, conflict, and resolution.</p>
+                                 <div class="flex items-center gap-2">
+                                     <span class="text-[10px] bg-zinc-100 px-2 py-1 rounded text-zinc-600">LinkedIn</span>
+                                     <span class="text-[10px] bg-zinc-100 px-2 py-1 rounded text-zinc-600">Personal Brand</span>
+                                 </div>
+                             </div>
+                         </div>
+                         
+                         <!-- Template Card 2 -->
+                         <div class="bg-white border border-zinc-200 rounded-xl overflow-hidden group hover:shadow-md transition-all cursor-pointer">
+                             <div class="h-32 bg-gradient-to-br from-green-50 to-emerald-50 flex items-center justify-center">
+                                 <svg data-lucide="file-text" class="w-10 h-10 text-emerald-600 opacity-80 group-hover:scale-110 transition-transform"></svg>
+                             </div>
+                             <div class="p-5">
+                                 <h3 class="font-semibold text-zinc-900">SEO Deep Dive</h3>
+                                 <p class="text-xs text-zinc-500 mt-1 mb-4">Long-form article structure optimized for high-volume keywords.</p>
+                                 <div class="flex items-center gap-2">
+                                     <span class="text-[10px] bg-zinc-100 px-2 py-1 rounded text-zinc-600">Blog</span>
+                                     <span class="text-[10px] bg-zinc-100 px-2 py-1 rounded text-zinc-600">Educational</span>
+                                 </div>
+                             </div>
+                         </div>
+
+                         <!-- Template Card 3 -->
+                         <div class="bg-white border border-zinc-200 rounded-xl overflow-hidden group hover:shadow-md transition-all cursor-pointer">
+                             <div class="h-32 bg-gradient-to-br from-zinc-100 to-zinc-200 flex items-center justify-center">
+                                 <svg data-lucide="twitter" class="w-10 h-10 text-black opacity-80 group-hover:scale-110 transition-transform"></svg>
+                             </div>
+                             <div class="p-5">
+                                 <h3 class="font-semibold text-zinc-900">Controversial Take</h3>
+                                 <p class="text-xs text-zinc-500 mt-1 mb-4">Thread structure designed to spark debate and engagement.</p>
+                                 <div class="flex items-center gap-2">
+                                     <span class="text-[10px] bg-zinc-100 px-2 py-1 rounded text-zinc-600">Twitter/X</span>
+                                     <span class="text-[10px] bg-zinc-100 px-2 py-1 rounded text-zinc-600">Growth</span>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+
         </main>
     </div>
 
-    <!-- Script Logic -->
+    <!-- Application Logic -->
     <script>
-        // Initialize Icons
-        lucide.createIcons();
+        // --- Mock Data ---
+        const HISTORY_DATA = [
+            { id: 1, name: "Alex Hormozi - $100M Leads", source: "YouTube", platform: "LinkedIn", status: "Published", date: "2 hours ago", type: "video" },
+            { id: 2, name: "MKBHD - iPhone 15 Review", source: "YouTube", platform: "Blog", status: "Draft", date: "1 day ago", type: "video" },
+            { id: 3, name: "Q4 Marketing Strategy", source: "Upload", platform: "Summary", status: "Completed", date: "3 days ago", type: "file" },
+            { id: 4, name: "Lex Fridman #302", source: "Podcast", platform: "Twitter", status: "Scheduled", date: "5 days ago", type: "audio" },
+        ];
 
-        // --- View Switching Logic ---
-        function switchView(viewName) {
-            document.getElementById('view-landing').classList.add('hidden-view');
-            document.getElementById('view-dashboard').classList.add('hidden-view');
-            
-            document.getElementById('view-' + viewName).classList.remove('hidden-view');
-            window.scrollTo(0, 0);
-        }
-
-        // --- Core App Logic ---
-        let currentMode = 'summary';
-        let isGenerating = false;
-
-        // Mock Data for Modes
-        const MOCK_CONTENT = {
+        const CONTENT_MOCK = {
             summary: `
-                <h2 class="text-xl font-bold tracking-tight text-zinc-900 mb-4">The Psychology of Unwavering Commitment</h2>
-                <p class="text-zinc-600 mb-6 leading-7">
-                    Rick Astley's "Never Gonna Give You Up" isn't just an 80s pop hit; it's a masterclass in declaring absolute loyalty. The core message transcends the catchy synth-pop beat, delivering a promise of emotional security that is increasingly rare in modern contexts.
-                </p>
-                <div class="my-6 p-4 bg-zinc-50 rounded-lg border border-zinc-100">
-                    <h3 class="text-sm font-semibold text-zinc-900 mb-3 flex items-center gap-2">
-                        Key Insights
-                    </h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-sm text-zinc-600">
-                            <strong>Consistency builds trust:</strong> The repetition of "never gonna" reinforces a binding contract.
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-zinc-600">
-                            <strong>Emotional Transparency:</strong> "Inside we both know what's been going on" — acknowledging reality is key.
-                        </li>
-                    </ul>
+                <h1>The Psychology of Commitment: An Analysis</h1>
+                <div class="bg-blue-50 border border-blue-100 rounded-lg p-4 mb-6">
+                    <p class="text-sm text-blue-800 font-medium">✨ Insight: This content scores 92/100 for viral potential based on the "curiosity gap" principle.</p>
                 </div>
+                <p>Rick Astley's "Never Gonna Give You Up" isn't just a meme; it's a masterclass in establishing trust. In a business context, the lyrics map perfectly to Service Level Agreements (SLAs).</p>
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Reliability:</strong> "Never gonna let you down" speaks to uptime and consistency.</li>
+                    <li><strong>Transparency:</strong> "Inside we both know what's been going on" creates authentic connection.</li>
+                    <li><strong>Long-term Vision:</strong> "We've known each other for so long" emphasizes LTV (Lifetime Value).</li>
+                </ul>
+                <blockquote>"A full commitment's what I'm thinking of / You wouldn't get this from any other guy" — This is your Unique Selling Proposition (USP).</blockquote>
             `,
             linkedin: `
-                <p class="text-zinc-600 mb-4 leading-7"><strong>Hook:</strong> Most people think "Never Gonna Give You Up" is just a meme. They're wrong. It's the ultimate lesson in customer retention.</p>
-                <p class="text-zinc-600 mb-4 leading-7">I analyzed the lyrics of Rick Astley's 1987 hit, and realized it outlines the perfect SLA (Service Level Agreement) for any business:</p>
-                <ul class="list-disc pl-5 text-zinc-600 space-y-2 mb-6">
-                    <li>"Never gonna give you up" = Retention</li>
-                    <li>"Never gonna let you down" = Reliability</li>
-                    <li>"Never gonna run around and desert you" = Loyalty</li>
-                </ul>
-                <p class="text-zinc-600 mb-4 leading-7">In a world of churn and burn, be the Rick Astley of your industry.</p>
-                <p class="text-zinc-600 font-semibold">Are you letting your customers down? 👇</p>
-                <p class="text-zinc-400 text-xs mt-4">#BusinessStrategy #CustomerSuccess #RickRoll</p>
+                <p>Stop overcomplicating customer success. 🛑</p>
+                <p>I just revisited a classic piece of media from 1987, and it teaches us more about retention than any SaaS playbook.</p>
+                <p>Rick Astley’s specific promises constitute the perfect SLA:</p>
+                <p>1️⃣ "Never gonna give you up" (Churn prevention)<br>
+                2️⃣ "Never gonna let you down" (Reliability)<br>
+                3️⃣ "Never gonna run around" (Focus)</p>
+                <p>Most companies fail at #2, which makes #1 impossible.</p>
+                <p><strong>The lesson?</strong> Don't innovate on trust. Be boringly reliable.</p>
+                <p>👇 How do you define reliability in your niche?</p>
+                <p>#CustomerSuccess #SaaS #Growth #BusinessStrategy</p>
             `,
             twitter: `
-                <p class="text-zinc-600 mb-3">1/ Why Rick Astley is a better business coach than your MBA professor. 🧵</p>
-                <div class="h-px bg-zinc-100 w-full my-3"></div>
-                <p class="text-zinc-600 mb-3">2/ "We're no strangers to love / You know the rules and so do I"</p>
-                <p class="text-zinc-600 mb-3">Lesson: Set clear expectations immediately. Onboarding is everything.</p>
-                <div class="h-px bg-zinc-100 w-full my-3"></div>
-                <p class="text-zinc-600 mb-3">3/ "A full commitment's what I'm thinking of"</p>
-                <p class="text-zinc-600 mb-3">Lesson: Don't half-bake your product. Go all in or go home.</p>
-                <div class="h-px bg-zinc-100 w-full my-3"></div>
-                <p class="text-zinc-600 mb-3">4/ "Never gonna tell a lie and hurt you"</p>
-                <p class="text-zinc-600 mb-3">Lesson: Radical transparency. If you screw up, own it.</p>
-            `,
-            blog: `
-                <h1 class="text-2xl font-bold text-zinc-900 mb-4">Rickrolling Your Way to Success: Analyzing the Astley Method</h1>
-                <h2 class="text-lg font-bold text-zinc-800 mt-6 mb-3">Introduction</h2>
-                <p class="text-zinc-600 mb-4 leading-7">In 1987, a cultural phenomenon was born. But beyond the memes, there lies a deep philosophy of commitment.</p>
-                <h2 class="text-lg font-bold text-zinc-800 mt-6 mb-3">The Three Pillars of Astley</h2>
-                <p class="text-zinc-600 mb-4 leading-7">The song outlines three distinct promises that every leader should make to their team...</p>
+                <p>1/ Why Rick Astley is a better business coach than your MBA professor. 🧵</p>
+                <hr class="my-4 border-zinc-200">
+                <p>2/ "We're no strangers to love / You know the rules and so do I"</p>
+                <p>Lesson: Set clear expectations immediately. Onboarding is everything.</p>
+                <hr class="my-4 border-zinc-200">
+                <p>3/ "A full commitment's what I'm thinking of"</p>
+                <p>In a world of short-term hacks, long-term commitment is the ultimate moat.</p>
             `
         };
 
-        function setMode(mode) {
-            currentMode = mode;
-            
-            // Update UI Tabs
-            document.querySelectorAll('.mode-tab').forEach(el => {
-                el.classList.remove('bg-white', 'shadow-sm', 'border-zinc-200', 'text-zinc-900');
-                el.classList.add('text-zinc-500', 'border-transparent');
-                
-                // Re-add lock icon logic if needed visually
-            });
-            
-            const activeTab = document.getElementById('tab-' + mode);
-            activeTab.classList.remove('text-zinc-500', 'border-transparent');
-            activeTab.classList.add('bg-white', 'shadow-sm', 'border-zinc-200', 'text-zinc-900');
+        // --- Core Application ---
+        const $ = (s) => document.querySelector(s);
+        const $$ = (s) => document.querySelectorAll(s);
 
-            // Simulate Paywall Logic
-            if (mode !== 'summary') {
-                // In a real app, check user.subscriptionStatus here
-                // For demo, we just allow it but maybe show a toast
-                console.log("Pro feature accessed");
+        class App {
+            constructor() {
+                this.init();
             }
 
-            // Regenerate content if we have a URL loaded
-            const content = document.getElementById('generated-content');
-            if (!content.classList.contains('hidden')) {
-                renderContent(MOCK_CONTENT[mode]);
-            }
-        }
-
-        function generateContent() {
-            const url = document.getElementById('url-input').value;
-            if (!url) return;
-
-            // UI Loading State
-            document.getElementById('loading-overlay').classList.remove('hidden');
-            document.getElementById('placeholder-content').classList.add('hidden');
-            
-            // Simulated Backend Delay (1.5s)
-            setTimeout(() => {
-                document.getElementById('loading-overlay').classList.add('hidden');
-                document.getElementById('generated-content').classList.remove('hidden');
-                document.getElementById('video-card').classList.remove('hidden');
-                
-                renderContent(MOCK_CONTENT[currentMode]);
-                
-                // Update Word Count
-                document.getElementById('word-count').innerText = "Words: " + MOCK_CONTENT[currentMode].split(' ').length;
-                
-            }, 1500);
-        }
-
-        function renderContent(html) {
-            const container = document.getElementById('markdown-output');
-            
-            // In a real app, this would be: container.innerHTML = marked.parse(markdown);
-            // Here we just inject the mock HTML
-            container.innerHTML = html;
-            
-            // Re-run animation
-            container.classList.remove('animate-fade-in');
-            void container.offsetWidth; // Trigger reflow
-            container.classList.add('animate-fade-in');
-        }
-
-        function copyToClipboard() {
-            // Mock copy
-            const btn = document.querySelector('button[onclick="copyToClipboard()"]');
-            const originalText = btn.innerHTML;
-            
-            btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5"></i> Copied!`;
-            btn.classList.remove('bg-zinc-900', 'text-white');
-            btn.classList.add('bg-green-100', 'text-green-700');
-            lucide.createIcons();
-
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.classList.add('bg-zinc-900', 'text-white');
-                btn.classList.remove('bg-green-100', 'text-green-700');
+            init() {
                 lucide.createIcons();
-            }, 2000);
+                this.router = new Router(this);
+                this.generator = new Generator(this);
+                this.editor = new Editor(this);
+                this.renderHistory();
+            }
+
+            renderHistory() {
+                const tbody = $('#history-list');
+                tbody.innerHTML = HISTORY_DATA.map(item => `
+                    <tr class="hover:bg-zinc-50 group cursor-pointer transition-colors border-b border-zinc-50 last:border-0">
+                        <td class="px-6 py-4 font-medium text-zinc-900 flex items-center gap-3">
+                            <div class="w-8 h-8 rounded bg-zinc-100 flex items-center justify-center text-zinc-500">
+                                <i data-lucide="${item.type === 'video' ? 'video' : item.type === 'audio' ? 'mic' : 'file'}" class="w-4 h-4"></i>
+                            </div>
+                            ${item.name}
+                        </td>
+                        <td class="px-6 py-4 text-zinc-500">${item.source}</td>
+                        <td class="px-6 py-4 text-zinc-500">${item.date}</td>
+                        <td class="px-6 py-4">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${item.status === 'Published' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-zinc-100 text-zinc-600 border-zinc-200'}">
+                                <span class="w-1.5 h-1.5 rounded-full ${item.status === 'Published' ? 'bg-green-500' : 'bg-zinc-400'}"></span>
+                                ${item.status}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <button class="p-1.5 hover:bg-zinc-100 rounded text-zinc-400 hover:text-zinc-600 transition-colors">
+                                <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+                lucide.createIcons();
+            }
+
+            toast(msg, type='info') {
+                const c = $('#toast-container');
+                const t = document.createElement('div');
+                t.className = `flex items-center gap-3 px-4 py-3 rounded-lg shadow-lg text-sm font-medium transform transition-all duration-300 translate-y-2 opacity-0 ${type === 'success' ? 'bg-zinc-900 text-white' : 'bg-white text-zinc-900 border border-zinc-200'}`;
+                t.innerHTML = `<i data-lucide="${type === 'success' ? 'check' : 'info'}" class="w-4 h-4"></i> ${msg}`;
+                c.appendChild(t);
+                lucide.createIcons();
+                requestAnimationFrame(() => t.classList.remove('translate-y-2', 'opacity-0'));
+                setTimeout(() => {
+                    t.classList.add('opacity-0', 'translate-y-2');
+                    setTimeout(() => t.remove(), 300);
+                }, 3000);
+            }
         }
 
+        class Router {
+            constructor(app) {
+                this.app = app;
+                this.routes = {
+                    'landing': $('#view-landing'),
+                    'dashboard': $('#view-dashboard')
+                };
+            }
+
+            navigate(route) {
+                Object.values(this.routes).forEach(el => el.classList.add('hidden-view'));
+                this.routes[route].classList.remove('hidden-view');
+                window.scrollTo(0, 0);
+            }
+
+            switchTab(tabId) {
+                // UI Update
+                $$('.nav-item').forEach(el => {
+                    el.classList.remove('bg-zinc-100', 'text-zinc-900');
+                    el.classList.add('text-zinc-500', 'hover:bg-zinc-50');
+                    // Reset Icons color
+                    const icon = el.querySelector('svg');
+                    if(icon) icon.classList.add('text-zinc-400');
+                });
+                
+                const activeBtn = $(`#nav-${tabId}`);
+                if (activeBtn) {
+                    activeBtn.classList.add('bg-zinc-100', 'text-zinc-900');
+                    activeBtn.classList.remove('text-zinc-500', 'hover:bg-zinc-50');
+                    const icon = activeBtn.querySelector('svg');
+                    if(icon) {
+                        icon.classList.remove('text-zinc-400');
+                        icon.classList.add('text-zinc-900');
+                    }
+                }
+
+                // View Switching
+                $$('main > div[id^="tab-"]').forEach(el => el.classList.add('hidden'));
+                const target = $(`#tab-${tabId}`);
+                if (target) {
+                    target.classList.remove('hidden');
+                    if(tabId === 'home') target.classList.add('animate-enter');
+                }
+            }
+        }
+
+        class Generator {
+            constructor(app) {
+                this.app = app;
+            }
+
+            start() {
+                const btn = $('#generate-btn');
+                const url = $('#url-input').value;
+                if(!url) return this.app.toast("Please enter a valid URL", "error");
+
+                // UI State: Loading
+                btn.disabled = true;
+                btn.innerHTML = `<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Processing...`;
+                lucide.createIcons();
+                
+                $('#empty-state').classList.add('hidden');
+                $('#generated-content').classList.add('hidden');
+                $('#loading-state').classList.remove('hidden');
+                $('#video-preview').classList.remove('hidden');
+
+                // Simulate Network Delay
+                setTimeout(() => {
+                    $('#loading-state').classList.add('hidden');
+                    $('#generated-content').classList.remove('hidden');
+                    
+                    btn.disabled = false;
+                    btn.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4"></i> Generate Content`;
+                    lucide.createIcons();
+                    
+                    this.app.editor.render(CONTENT_MOCK.summary);
+                    this.app.toast("Content generated successfully", "success");
+                    
+                    // Show save indicator briefly
+                    const saveInd = $('#save-indicator');
+                    saveInd.classList.remove('opacity-0');
+                    setTimeout(() => saveInd.classList.add('opacity-0'), 2000);
+                }, 2500);
+            }
+        }
+
+        class Editor {
+            constructor(app) {
+                this.app = app;
+            }
+
+            setFormat(fmt) {
+                // Tab Styles
+                $$('.fmt-btn').forEach(b => {
+                    b.classList.remove('bg-white', 'text-zinc-900', 'shadow-sm', 'ring-1', 'ring-black/5');
+                    b.classList.add('text-zinc-500');
+                });
+                
+                const active = $(`#fmt-${fmt}`);
+                active.classList.add('bg-white', 'text-zinc-900', 'shadow-sm', 'ring-1', 'ring-black/5');
+                active.classList.remove('text-zinc-500');
+
+                // Render Content if active
+                if (!$('#generated-content').classList.contains('hidden')) {
+                    this.render(CONTENT_MOCK[fmt] || CONTENT_MOCK.summary);
+                }
+            }
+
+            render(html) {
+                const container = $('#generated-content');
+                container.innerHTML = html;
+                
+                // Re-trigger animation
+                container.classList.remove('animate-enter');
+                void container.offsetWidth; 
+                container.classList.add('animate-enter');
+            }
+        }
+
+        const app = new App();
+
+        // Parallax effect for hero blobs
+        document.addEventListener('mousemove', (e) => {
+            const blobs = document.querySelectorAll('.rounded-\\[100\\%\\]');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            blobs.forEach(blob => {
+                blob.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+            });
+        });
     </script>
 </body>
 </html>
