@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViralLoop - Content Repurposing Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Vertex Design System Utils */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #f4f4f5 1px, transparent 1px),
+                              linear-gradient(to bottom, #f4f4f5 1px, transparent 1px);
+        }
+        
+        .vertex-card {
+            background: white;
+            border: 1px solid #e4e4e7; /* zinc-200 */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .vertex-btn-primary {
+            background-color: #18181b; /* zinc-900 */
+            color: white;
+            transition: all 0.2s;
+        }
+        .vertex-btn-primary:hover {
+            background-color: #27272a; /* zinc-800 */
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .hidden-view {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900 min-h-screen flex flex-col bg-grid selection:bg-zinc-900 selection:text-white overflow-x-hidden">
+
+    <!-- VIEW: LANDING PAGE -->
+    <div id="view-landing" class="flex flex-col min-h-screen">
+        
+        <!-- Navbar -->
+        <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 bg-zinc-900 rounded-lg flex items-center justify-center text-white shadow-sm">
+                        <i data-lucide="infinity" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-zinc-900">ViralLoop</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#features" class="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">Features</a>
+                    <a href="#pricing" class="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors">Pricing</a>
+                    <button onclick="switchView('dashboard')" class="vertex-btn-primary px-5 py-2 rounded-md text-sm font-medium">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="flex-1 flex flex-col items-center justify-center text-center px-6 pt-24 pb-32">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-xs font-medium text-zinc-600 mb-8 animate-fade-in">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                v1.0 is Live
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-zinc-900 mb-6 max-w-4xl leading-tight animate-fade-in" style="animation-delay: 0.1s;">
+                Stop Summarizing.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-500 to-zinc-900">Start Repurposing.</span>
+            </h1>
+            
+            <p class="text-xl text-zinc-500 max-w-2xl mb-10 leading-relaxed animate-fade-in" style="animation-delay: 0.2s;">
+                Turn one YouTube video into a week's worth of high-engagement LinkedIn posts, Twitter threads, and Blog articles instantly.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.3s;">
+                <button onclick="switchView('dashboard')" class="vertex-btn-primary px-8 py-3.5 rounded-lg text-base font-semibold flex items-center justify-center gap-2">
+                    Try ViralLoop Free
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <button class="bg-white border border-zinc-200 text-zinc-700 px-8 py-3.5 rounded-lg text-base font-semibold hover:bg-zinc-50 transition-colors flex items-center justify-center gap-2">
+                    <i data-lucide="play-circle" class="w-4 h-4"></i>
+                    Watch Demo
+                </button>
+            </div>
+
+            <!-- Hero Image / Mockup -->
+            <div class="mt-20 w-full max-w-5xl bg-zinc-900 p-2 rounded-xl shadow-2xl border border-zinc-800 animate-fade-in" style="animation-delay: 0.4s;">
+                <div class="bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 aspect-[16/9] relative group cursor-pointer">
+                    <!-- Faux UI for Dashboard Preview -->
+                    <div class="absolute inset-0 flex">
+                        <div class="w-64 border-r border-zinc-800 bg-zinc-900/50 p-4 hidden md:block">
+                            <div class="h-8 w-32 bg-zinc-800 rounded mb-6"></div>
+                            <div class="space-y-3">
+                                <div class="h-12 w-full bg-zinc-800/50 rounded border border-zinc-700"></div>
+                                <div class="h-12 w-full bg-zinc-800/30 rounded border border-zinc-800"></div>
+                            </div>
+                        </div>
+                        <div class="flex-1 p-8 flex flex-col items-center justify-center text-zinc-500">
+                            <i data-lucide="layout-dashboard" class="w-16 h-16 mb-4 opacity-50"></i>
+                            <p>Interactive Dashboard Preview</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Features Grid -->
+        <section id="features" class="bg-white py-24 border-y border-zinc-200">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight text-zinc-900 mb-4">The Content Engine</h2>
+                    <p class="text-zinc-500 max-w-2xl mx-auto">We don't just shorten content. We restructure it for specific platforms using advanced prompt engineering.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="linkedin" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">LinkedIn Ghostwriter</h3>
+                        <p class="text-zinc-500 leading-relaxed">Generates posts with viral hooks, meat-and-potatoes value, and engagement-driving questions.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="twitter" class="w-6 h-6 text-sky-500"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Thread Weaver</h3>
+                        <p class="text-zinc-500 leading-relaxed">Automatically splits long videos into 6-10 tweet threads that maintain context and flow.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-6 rounded-2xl border border-zinc-200 bg-zinc-50 hover:bg-white hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="newspaper" class="w-6 h-6 text-amber-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">SEO Blog Builder</h3>
+                        <p class="text-zinc-500 leading-relaxed">Creates H1/H2 structured articles optimized for search engines, ready to copy-paste into CMS.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- VIEW: DASHBOARD (Ideally this would be separate routes in Next.js) -->
+    <div id="view-dashboard" class="flex flex-col min-h-screen hidden-view">
+        
+        <!-- Dashboard Navbar -->
+        <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchView('landing')">
+                    <div class="w-8 h-8 bg-zinc-900 rounded-lg flex items-center justify-center text-white shadow-sm">
+                        <i data-lucide="infinity" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-zinc-900">ViralLoop</span>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center gap-2 text-xs font-medium text-zinc-600 bg-zinc-50 px-3 py-1.5 rounded-md border border-zinc-200 shadow-sm">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500 fill-amber-500"></i>
+                        <span id="credits-display">2 Credits Left</span>
+                    </div>
+                    <button class="w-8 h-8 rounded-full bg-zinc-200 border border-zinc-300 flex items-center justify-center text-zinc-500 hover:text-zinc-900 transition-colors">
+                        <span class="font-medium text-xs">JD</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <main class="flex-1 max-w-7xl mx-auto w-full px-4 md:px-6 py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+            
+            <!-- Left Column: Input & Context -->
+            <div class="lg:col-span-4 space-y-6">
+                
+                <!-- Input Section -->
+                <div class="space-y-4">
+                    <div>
+                        <h1 class="text-2xl font-bold tracking-tight text-zinc-900">New Project</h1>
+                        <p class="text-zinc-500 text-sm mt-1">Paste a YouTube URL to ghostwrite content.</p>
+                    </div>
+
+                    <div class="vertex-card p-1.5 rounded-xl shadow-sm bg-white">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                                <i data-lucide="youtube" class="w-4 h-4 text-zinc-400"></i>
+                            </div>
+                            <input type="text" 
+                                   id="url-input"
+                                   placeholder="https://youtube.com/watch?v=..." 
+                                   class="w-full pl-10 pr-4 py-2.5 bg-zinc-50 border border-transparent rounded-lg text-sm transition-all focus:outline-none focus:border-zinc-900 focus:bg-white placeholder:text-zinc-400 font-medium text-zinc-900" 
+                                   value="https://youtu.be/dQw4w9WgXcQ">
+                        </div>
+                        <button onclick="generateContent()" id="generate-btn" class="w-full mt-2 bg-zinc-900 hover:bg-zinc-800 text-white font-medium py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2 shadow-sm active:scale-[0.99]">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            Generate Content
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Video Context Card (Hidden initially) -->
+                <div id="video-card" class="vertex-card p-4 rounded-xl space-y-3 hidden">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Source Video</span>
+                        <span class="text-xs text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-100 font-medium">Processed</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="w-24 h-16 bg-zinc-900 rounded-md overflow-hidden relative flex-shrink-0 group">
+                            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" class="w-full h-full object-cover opacity-80">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i data-lucide="play-circle" class="w-6 h-6 text-white opacity-80"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h3 class="font-semibold text-sm leading-tight line-clamp-2 text-zinc-900">Rick Astley - Never Gonna Give You Up (Official Music Video)</h3>
+                            <div class="flex items-center gap-2 mt-1.5">
+                                <div class="flex items-center gap-1 text-zinc-500">
+                                    <i data-lucide="clock" class="w-3 h-3"></i>
+                                    <span class="text-xs">3:32</span>
+                                </div>
+                                <span class="text-zinc-300 text-[10px]">•</span>
+                                <span class="text-xs text-zinc-500">1.2B Views</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent History -->
+                <div class="pt-4 border-t border-zinc-200 space-y-3">
+                    <div class="flex items-center justify-between px-1">
+                        <h3 class="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Recent Projects</h3>
+                    </div>
+                    <div class="space-y-1">
+                        <button class="w-full text-left p-2.5 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-zinc-200 transition-all group flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                            <div class="overflow-hidden">
+                                <p class="text-sm font-medium text-zinc-600 group-hover:text-zinc-900 truncate">Alex Hormozi - $100M Leads Strategy</p>
+                                <p class="text-xs text-zinc-400 mt-0.5 truncate">Generated LinkedIn • 2h ago</p>
+                            </div>
+                        </button>
+                        <button class="w-full text-left p-2.5 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-zinc-200 transition-all group flex items-start gap-3">
+                            <div class="mt-1 w-1.5 h-1.5 rounded-full bg-zinc-300"></div>
+                            <div class="overflow-hidden">
+                                <p class="text-sm font-medium text-zinc-600 group-hover:text-zinc-900 truncate">MKBHD - iPhone 15 Review</p>
+                                <p class="text-xs text-zinc-400 mt-0.5 truncate">Generated Blog • 1d ago</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Editor Interface -->
+            <div class="lg:col-span-8 h-[calc(100vh-8rem)] min-h-[600px] vertex-card rounded-xl flex flex-col overflow-hidden shadow-sm relative">
+                
+                <!-- Loading Overlay -->
+                <div id="loading-overlay" class="absolute inset-0 bg-white/90 backdrop-blur-sm z-20 flex flex-col items-center justify-center hidden">
+                    <div class="w-8 h-8 border-4 border-zinc-200 border-t-zinc-900 rounded-full animate-spin mb-4"></div>
+                    <p class="text-zinc-900 font-semibold animate-pulse">Ghostwriting Content...</p>
+                    <p class="text-zinc-500 text-sm mt-1">Analyzing transcript & tonality</p>
+                </div>
+
+                <!-- Editor Toolbar -->
+                <div class="flex items-center justify-between border-b border-zinc-200 bg-zinc-50/50 p-2 overflow-x-auto">
+                    <!-- Mode Tabs -->
+                    <div class="flex items-center gap-1" id="mode-tabs">
+                        <button onclick="setMode('summary')" id="tab-summary" class="mode-tab active px-3 py-1.5 text-xs font-medium text-zinc-900 bg-white shadow-sm border border-zinc-200 rounded-md flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5 text-blue-600"></i> Summary
+                        </button>
+                        <button onclick="setMode('linkedin')" id="tab-linkedin" class="mode-tab px-3 py-1.5 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100/80 rounded-md flex items-center gap-2 transition-colors border border-transparent">
+                            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn
+                            <i data-lucide="lock" class="w-3 h-3 text-zinc-400 ml-1"></i>
+                        </button>
+                        <button onclick="setMode('twitter')" id="tab-twitter" class="mode-tab px-3 py-1.5 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100/80 rounded-md flex items-center gap-2 transition-colors border border-transparent">
+                            <i data-lucide="twitter" class="w-3.5 h-3.5"></i> Twitter
+                            <i data-lucide="lock" class="w-3 h-3 text-zinc-400 ml-1"></i>
+                        </button>
+                        <button onclick="setMode('blog')" id="tab-blog" class="mode-tab px-3 py-1.5 text-xs font-medium text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100/80 rounded-md flex items-center gap-2 transition-colors border border-transparent">
+                            <i data-lucide="newspaper" class="w-3.5 h-3.5"></i> Blog Post
+                            <i data-lucide="lock" class="w-3 h-3 text-zinc-400 ml-1"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center gap-2 pr-2">
+                        <span class="text-[10px] font-mono text-zinc-400">v1.0.2</span>
+                    </div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="flex-1 bg-white p-8 overflow-y-auto relative" id="content-area">
+                    
+                    <!-- Placeholder State -->
+                    <div id="placeholder-content" class="h-full flex flex-col items-center justify-center text-center opacity-60">
+                        <div class="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="sparkles" class="w-8 h-8 text-zinc-300"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-zinc-900">Ready to Repurpose</h3>
+                        <p class="text-zinc-500 max-w-xs mt-1">Enter a YouTube URL and hit generate to see the magic happen.</p>
+                    </div>
+
+                    <!-- AI Output -->
+                    <div id="generated-content" class="max-w-2xl mx-auto hidden">
+                        <!-- Metadata Header -->
+                        <div class="flex items-center justify-between mb-8 pb-4 border-b border-zinc-100">
+                            <div class="flex items-center gap-3">
+                                <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
+                                    <i data-lucide="bot" class="w-4 h-4 text-blue-600"></i>
+                                </span>
+                                <div>
+                                    <p class="text-xs font-semibold text-zinc-900">ViralLoop AI</p>
+                                    <p class="text-[10px] text-zinc-400">Generated via Gemini 1.5 Flash</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-1">
+                                <button class="p-1.5 hover:bg-zinc-100 rounded text-zinc-400 hover:text-zinc-600 transition-colors">
+                                    <i data-lucide="thumbs-up" class="w-4 h-4"></i>
+                                </button>
+                                <button class="p-1.5 hover:bg-zinc-100 rounded text-zinc-400 hover:text-zinc-600 transition-colors">
+                                    <i data-lucide="thumbs-down" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- The Text Container -->
+                        <article class="prose prose-zinc prose-sm" id="markdown-output">
+                            <!-- Dynamic Content Goes Here -->
+                        </article>
+                        
+                        <div class="h-12"></div> <!-- Spacer -->
+                    </div>
+                </div>
+
+                <!-- Footer Actions -->
+                <div class="p-4 bg-white border-t border-zinc-200 flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                        <button class="p-2 hover:bg-zinc-100 rounded-lg text-zinc-500 transition-colors group relative" title="Regenerate">
+                            <i data-lucide="refresh-ccw" class="w-4 h-4 group-hover:rotate-180 transition-transform duration-500"></i>
+                        </button>
+                        <div class="h-4 w-px bg-zinc-200 mx-1"></div>
+                        <span class="text-xs text-zinc-400 font-medium ml-1" id="word-count">Words: 0</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="px-4 py-2 bg-white border border-zinc-200 text-zinc-700 text-xs font-medium rounded-lg hover:bg-zinc-50 hover:border-zinc-300 transition-colors shadow-sm">
+                            Save Draft
+                        </button>
+                        <button onclick="copyToClipboard()" class="px-4 py-2 bg-zinc-900 text-white text-xs font-medium rounded-lg hover:bg-zinc-800 transition-colors flex items-center gap-2 shadow-sm">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            Copy Text
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // --- View Switching Logic ---
+        function switchView(viewName) {
+            document.getElementById('view-landing').classList.add('hidden-view');
+            document.getElementById('view-dashboard').classList.add('hidden-view');
+            
+            document.getElementById('view-' + viewName).classList.remove('hidden-view');
+            window.scrollTo(0, 0);
+        }
+
+        // --- Core App Logic ---
+        let currentMode = 'summary';
+        let isGenerating = false;
+
+        // Mock Data for Modes
+        const MOCK_CONTENT = {
+            summary: `
+                <h2 class="text-xl font-bold tracking-tight text-zinc-900 mb-4">The Psychology of Unwavering Commitment</h2>
+                <p class="text-zinc-600 mb-6 leading-7">
+                    Rick Astley's "Never Gonna Give You Up" isn't just an 80s pop hit; it's a masterclass in declaring absolute loyalty. The core message transcends the catchy synth-pop beat, delivering a promise of emotional security that is increasingly rare in modern contexts.
+                </p>
+                <div class="my-6 p-4 bg-zinc-50 rounded-lg border border-zinc-100">
+                    <h3 class="text-sm font-semibold text-zinc-900 mb-3 flex items-center gap-2">
+                        Key Insights
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-sm text-zinc-600">
+                            <strong>Consistency builds trust:</strong> The repetition of "never gonna" reinforces a binding contract.
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-zinc-600">
+                            <strong>Emotional Transparency:</strong> "Inside we both know what's been going on" — acknowledging reality is key.
+                        </li>
+                    </ul>
+                </div>
+            `,
+            linkedin: `
+                <p class="text-zinc-600 mb-4 leading-7"><strong>Hook:</strong> Most people think "Never Gonna Give You Up" is just a meme. They're wrong. It's the ultimate lesson in customer retention.</p>
+                <p class="text-zinc-600 mb-4 leading-7">I analyzed the lyrics of Rick Astley's 1987 hit, and realized it outlines the perfect SLA (Service Level Agreement) for any business:</p>
+                <ul class="list-disc pl-5 text-zinc-600 space-y-2 mb-6">
+                    <li>"Never gonna give you up" = Retention</li>
+                    <li>"Never gonna let you down" = Reliability</li>
+                    <li>"Never gonna run around and desert you" = Loyalty</li>
+                </ul>
+                <p class="text-zinc-600 mb-4 leading-7">In a world of churn and burn, be the Rick Astley of your industry.</p>
+                <p class="text-zinc-600 font-semibold">Are you letting your customers down? 👇</p>
+                <p class="text-zinc-400 text-xs mt-4">#BusinessStrategy #CustomerSuccess #RickRoll</p>
+            `,
+            twitter: `
+                <p class="text-zinc-600 mb-3">1/ Why Rick Astley is a better business coach than your MBA professor. 🧵</p>
+                <div class="h-px bg-zinc-100 w-full my-3"></div>
+                <p class="text-zinc-600 mb-3">2/ "We're no strangers to love / You know the rules and so do I"</p>
+                <p class="text-zinc-600 mb-3">Lesson: Set clear expectations immediately. Onboarding is everything.</p>
+                <div class="h-px bg-zinc-100 w-full my-3"></div>
+                <p class="text-zinc-600 mb-3">3/ "A full commitment's what I'm thinking of"</p>
+                <p class="text-zinc-600 mb-3">Lesson: Don't half-bake your product. Go all in or go home.</p>
+                <div class="h-px bg-zinc-100 w-full my-3"></div>
+                <p class="text-zinc-600 mb-3">4/ "Never gonna tell a lie and hurt you"</p>
+                <p class="text-zinc-600 mb-3">Lesson: Radical transparency. If you screw up, own it.</p>
+            `,
+            blog: `
+                <h1 class="text-2xl font-bold text-zinc-900 mb-4">Rickrolling Your Way to Success: Analyzing the Astley Method</h1>
+                <h2 class="text-lg font-bold text-zinc-800 mt-6 mb-3">Introduction</h2>
+                <p class="text-zinc-600 mb-4 leading-7">In 1987, a cultural phenomenon was born. But beyond the memes, there lies a deep philosophy of commitment.</p>
+                <h2 class="text-lg font-bold text-zinc-800 mt-6 mb-3">The Three Pillars of Astley</h2>
+                <p class="text-zinc-600 mb-4 leading-7">The song outlines three distinct promises that every leader should make to their team...</p>
+            `
+        };
+
+        function setMode(mode) {
+            currentMode = mode;
+            
+            // Update UI Tabs
+            document.querySelectorAll('.mode-tab').forEach(el => {
+                el.classList.remove('bg-white', 'shadow-sm', 'border-zinc-200', 'text-zinc-900');
+                el.classList.add('text-zinc-500', 'border-transparent');
+                
+                // Re-add lock icon logic if needed visually
+            });
+            
+            const activeTab = document.getElementById('tab-' + mode);
+            activeTab.classList.remove('text-zinc-500', 'border-transparent');
+            activeTab.classList.add('bg-white', 'shadow-sm', 'border-zinc-200', 'text-zinc-900');
+
+            // Simulate Paywall Logic
+            if (mode !== 'summary') {
+                // In a real app, check user.subscriptionStatus here
+                // For demo, we just allow it but maybe show a toast
+                console.log("Pro feature accessed");
+            }
+
+            // Regenerate content if we have a URL loaded
+            const content = document.getElementById('generated-content');
+            if (!content.classList.contains('hidden')) {
+                renderContent(MOCK_CONTENT[mode]);
+            }
+        }
+
+        function generateContent() {
+            const url = document.getElementById('url-input').value;
+            if (!url) return;
+
+            // UI Loading State
+            document.getElementById('loading-overlay').classList.remove('hidden');
+            document.getElementById('placeholder-content').classList.add('hidden');
+            
+            // Simulated Backend Delay (1.5s)
+            setTimeout(() => {
+                document.getElementById('loading-overlay').classList.add('hidden');
+                document.getElementById('generated-content').classList.remove('hidden');
+                document.getElementById('video-card').classList.remove('hidden');
+                
+                renderContent(MOCK_CONTENT[currentMode]);
+                
+                // Update Word Count
+                document.getElementById('word-count').innerText = "Words: " + MOCK_CONTENT[currentMode].split(' ').length;
+                
+            }, 1500);
+        }
+
+        function renderContent(html) {
+            const container = document.getElementById('markdown-output');
+            
+            // In a real app, this would be: container.innerHTML = marked.parse(markdown);
+            // Here we just inject the mock HTML
+            container.innerHTML = html;
+            
+            // Re-run animation
+            container.classList.remove('animate-fade-in');
+            void container.offsetWidth; // Trigger reflow
+            container.classList.add('animate-fade-in');
+        }
+
+        function copyToClipboard() {
+            // Mock copy
+            const btn = document.querySelector('button[onclick="copyToClipboard()"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5"></i> Copied!`;
+            btn.classList.remove('bg-zinc-900', 'text-white');
+            btn.classList.add('bg-green-100', 'text-green-700');
+            lucide.createIcons();
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.add('bg-zinc-900', 'text-white');
+                btn.classList.remove('bg-green-100', 'text-green-700');
+                lucide.createIcons();
+            }, 2000);
+        }
+
+    </script>
+</body>
+</html>
