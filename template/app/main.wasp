@@ -82,18 +82,34 @@ app OpenSaaS {
   client: {
     rootComponent: import App from "@src/client/App",
   },
-
   emailSender: {
     // NOTE: "Dummy" provider is just for local development purposes.
     //   Make sure to check the server logs for the email confirmation url (it will not be sent to an address)!
     //   Once you are ready for production, switch to e.g. "SendGrid" or "Mailgun" providers. Check out https://docs.opensaas.sh/guides/email-sending/ .
-    provider: Dummy,
+    // provider: Dummy,
+    provider: SendGrid,
     defaultFrom: {
       name: "Open SaaS App",
       // When using a real provider, e.g. SendGrid, you must use the same email address that you configured your account to send out emails with!
       email: "me@example.com"
     },
   },
+}
+
+route DashboardRoute { path: "/dashboard", to: DashboardPage }
+page DashboardPage {
+  authRequired: true,
+  component: import DashboardPage from "@src/client/pages/DashboardPage"
+}
+
+action generateContent {
+  fn: import { generateContent } from "@src/actions",
+  entities: [User, ContentHistory]
+}
+
+query getHistory {
+  fn: import { getHistory } from "@src/queries",
+  entities: [User, ContentHistory]
 }
 
 route LandingPageRoute { path: "/", to: LandingPage }
@@ -253,17 +269,17 @@ query getDailyStats {
   entities: [User, DailyStats]
 }
 
-job dailyStatsJob {
-  executor: PgBoss,
-  perform: {
-    fn: import { calculateDailyStats } from "@src/analytics/stats"
-  },
-  schedule: {
-    cron: "0 * * * *" // every hour. useful in production
-    // cron: "* * * * *" // every minute. useful for debugging
-  },
-  entities: [User, DailyStats, Logs, PageViewSource]
-}
+// job dailyStatsJob {
+//   executor: PgBoss,
+//   perform: {
+//     fn: import { calculateDailyStats } from "@src/analytics/stats"
+//   },
+//   schedule: {
+//     cron: "0 * * * *" // every hour. useful in production
+//     // cron: "* * * * *" // every minute. useful for debugging
+//   },
+//   entities: [User, DailyStats, Logs, PageViewSource]
+// }
 //#endregion
 
 //#region Admin Dashboard

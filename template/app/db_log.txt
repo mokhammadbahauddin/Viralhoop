@@ -1,0 +1,15 @@
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied
+
+Run 'docker run --help' for more information
+[33m✨ Starting a PostgreSQL dev database (based on your Wasp config) ✨
+
+Additional info:
+ ℹ Using Docker image: postgres:18
+   with the data volume mounted at: /var/lib/postgresql
+ ℹ Connection URL, in case you might want to connect with external tools:
+     postgresql://postgresWaspDevUser:postgresWaspDevPass@localhost:5432/OpenSaaS-f3748b51e6
+ ℹ Database data is persisted in a Docker volume with the following name (useful to know if you will want to delete it at some point):
+     wasp-dev-db-OpenSaaS-f3748b51e6
+[0m
+[33m...[0m
+wasp-bin: callCommand: docker run --name wasp-dev-db-OpenSaaS-f3748b51e6 --rm --publish 5432:5432 -v wasp-dev-db-OpenSaaS-f3748b51e6:/var/lib/postgresql --env POSTGRES_PASSWORD=postgresWaspDevPass --env POSTGRES_USER=postgresWaspDevUser --env POSTGRES_DB=OpenSaaS-f3748b51e6 postgres:18 (exit 126): failed

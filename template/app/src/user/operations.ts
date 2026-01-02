@@ -115,7 +115,7 @@ export const getPaginatedUsers: GetPaginatedUsers<
         {
           email: {
             contains: emailContains,
-            mode: "insensitive",
+            // mode: "insensitive", // SQLite doesn't support insensitive mode
           },
           isAdmin,
         },
