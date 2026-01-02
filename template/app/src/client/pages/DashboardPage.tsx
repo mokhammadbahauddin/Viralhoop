@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAction } from 'wasp/client/operations';
 import { useQuery } from 'wasp/client/operations';
 import { generateContent, getHistory } from 'wasp/client/operations';
+import { useAuth } from 'wasp/client/auth';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/vertex/Button';
 import { Input } from '../components/vertex/Input';
@@ -18,9 +19,11 @@ import {
   List,
   History,
   Menu,
+  Lock,
 } from 'lucide-react';
 
 export default function DashboardPage() {
+  const { data: user } = useAuth();
   const [url, setUrl] = useState('');
   const [mode, setMode] = useState('summary'); // summary, linkedin, twitter, blog
   const [generatedContent, setGeneratedContent] = useState('');
@@ -30,29 +33,31 @@ export default function DashboardPage() {
 
   const [isGenerating, setIsGenerating] = useState(false);
 
+  const isPro = user?.subscriptionStatus === 'active';
+  const credits = user?.credits ?? 0;
+
   const handleGenerate = async () => {
     if (!url) return;
+
+    // Client-side validation
+    if (!isPro && mode !== 'summary') {
+        alert("Upgrade to Pro to use this feature.");
+        return;
+    }
+    if (!isPro && credits <= 0) {
+        alert("Insufficient credits. Upgrade to Pro or wait for refill.");
+        return;
+    }
+
     setIsGenerating(true);
     try {
-      // Note: In a real app, the action would return the content.
-      // Since our action saves to DB, we might want to fetch the latest item or have the action return it.
-      // For this MVP, let's assume we re-fetch history or modify action to return data.
-      // Modifying the action to return data is better.
-      // But based on my implementation, it returns void.
-      // I should update action to return the created entry, but for now I will refetch history.
-
-      await generateContentFn({ url, mode });
+      const result = await generateContentFn({ url, mode });
+      // Update local state immediately with result
+      setGeneratedContent(result.summary || result.linkedin || result.twitter || result.blog || "");
       await refetchHistory();
-
-      // Optimistically we can't easily get the content unless the action returns it.
-      // Let's rely on history for now, or assume the user clicks on the history item.
-      // Actually, UX wise, it should show up.
-      // I will update the action plan to return data in a future step if needed,
-      // but for now let's just trigger a refetch and select the first item?
-
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
-      alert('Failed to generate content. Check console.');
+      alert(error.message || 'Failed to generate content. Check console.');
     } finally {
       setIsGenerating(false);
     }
@@ -83,6 +88,22 @@ export default function DashboardPage() {
           <Button variant="ghost" className="w-full justify-start gap-2" size="sm">
             <History className="w-4 h-4" /> History
           </Button>
+        </div>
+
+        {/* Credit Usage */}
+        <div className="p-4 border-t border-zinc-100 bg-zinc-50/50">
+            <div className="mb-4">
+                <div className="flex items-center justify-between text-[11px] mb-1.5">
+                    <span className="font-medium text-zinc-600">Credits Used</span>
+                    <span className="font-mono text-zinc-500">{isPro ? 'Unlimited' : `${credits} remaining`}</span>
+                </div>
+                {!isPro && (
+                  <div className="w-full bg-zinc-200 rounded-full h-1.5 overflow-hidden">
+                      {/* Simple calc for now, assuming max 3 */}
+                      <div className="bg-zinc-800 h-full rounded-full" style={{ width: `${(credits / 3) * 100}%` }}></div>
+                  </div>
+                )}
+            </div>
         </div>
       </aside>
 
@@ -127,12 +148,15 @@ export default function DashboardPage() {
                         key={m.id}
                         onClick={() => setMode(m.id)}
                         className={cn(
-                          "cursor-pointer p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all",
+                          "cursor-pointer p-3 rounded-lg border flex flex-col items-center justify-center gap-2 transition-all relative",
                           mode === m.id
                             ? "border-zinc-900 bg-zinc-900 text-white"
                             : "border-zinc-200 bg-white hover:border-zinc-300 text-zinc-600"
                         )}
                       >
+                        {!isPro && m.id !== 'summary' && (
+                            <Lock className="absolute top-1 right-1 w-3 h-3 text-zinc-400" />
+                        )}
                         <m.icon className="w-4 h-4" />
                         <span className="text-xs font-medium">{m.label}</span>
                       </div>

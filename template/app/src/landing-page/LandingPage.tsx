@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Infinity } from 'lucide-react';
+import { ArrowRight, Check, Infinity, Lock, Zap, BrainCircuit, BarChart2 } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -37,10 +37,16 @@ export default function LandingPage() {
            <p className="text-lg md:text-xl text-zinc-500 max-w-2xl mx-auto mb-10 leading-relaxed">
               Stop manually rewriting content. Our AI engine analyzes your video, extracts viral hooks, and generates optimized posts for LinkedIn, X, and SEO blogs.
            </p>
-           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center mb-16">
               <Link to="/dashboard" className="w-full sm:w-auto hover:bg-zinc-800 transition-all flex gap-2 shadow-xl shadow-zinc-900/10 font-medium text-white bg-zinc-900 h-12 rounded-lg px-8 items-center justify-center">
                  Start Building Free <ArrowRight className="w-4 h-4" />
               </Link>
+           </div>
+
+           {/* Screenshot Section */}
+           <div className="relative max-w-5xl mx-auto mt-16 shadow-2xl rounded-xl overflow-hidden border border-zinc-200">
+              <img src="/img/dashboard_initial.png" alt="ViralLoop Dashboard Interface" className="w-full h-auto object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent pointer-events-none"></div>
            </div>
         </div>
       </div>
@@ -50,14 +56,23 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6">
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="p-8 rounded-2xl border border-zinc-200 bg-zinc-50">
+                 <div className="w-10 h-10 rounded-lg bg-white border border-zinc-200 flex items-center justify-center mb-6 shadow-sm text-blue-600">
+                    <Zap className="w-5 h-5" />
+                 </div>
                  <h3 className="text-xl font-semibold text-zinc-900 mb-2">Instant Repurposing</h3>
                  <p className="text-zinc-500">Paste a YouTube URL and get a week's worth of content in 30 seconds.</p>
               </div>
               <div className="p-8 rounded-2xl border border-zinc-200 bg-white">
+                 <div className="w-10 h-10 rounded-lg bg-zinc-50 border border-zinc-100 flex items-center justify-center mb-6 text-purple-600">
+                    <BrainCircuit className="w-5 h-5" />
+                 </div>
                  <h3 className="text-xl font-semibold text-zinc-900 mb-2">Contextual AI</h3>
                  <p className="text-zinc-500">Our model understands nuance, sarcasm, and industry jargon.</p>
               </div>
               <div className="p-8 rounded-2xl border border-zinc-200 bg-zinc-900 text-white">
+                 <div className="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-6 shadow-sm text-emerald-400">
+                    <BarChart2 className="w-5 h-5" />
+                 </div>
                  <h3 className="text-xl font-semibold mb-2">Performance Prediction</h3>
                  <p className="text-zinc-400">Score content against viral posts before you publish.</p>
               </div>

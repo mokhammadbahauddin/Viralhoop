@@ -5,12 +5,30 @@ import { HttpError } from 'wasp/server';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
+import { ContentHistory } from 'wasp/entities';
+
 export const generateContent: GenerateContent<
   { url: string; mode: string },
-  void
+  ContentHistory
 > = async ({ url, mode }, context) => {
   if (!context.user) {
     throw new HttpError(401);
+  }
+
+  // 0. Check Plan and Credits
+  // Assuming subscriptionStatus 'active' means Pro. Or we check subscriptionPlan.
+  // Using subscriptionStatus to be safe as per PRD "Use Wasp's user.subscriptionStatus to gate features."
+  // And "Display 'Lock' icons on Pro tabs for free users." - implies Free users are restricted.
+
+  const isPro = context.user.subscriptionStatus === 'active';
+  const isFreeMode = mode === 'summary';
+
+  if (!isPro && !isFreeMode) {
+    throw new HttpError(403, 'Upgrade to Pro to use this feature.');
+  }
+
+  if (!isPro && context.user.credits <= 0) {
+    throw new HttpError(402, 'Insufficient credits. Upgrade to Pro or wait for refill.');
   }
 
   // 1. Fetch Transcript
@@ -57,16 +75,29 @@ export const generateContent: GenerateContent<
     throw new HttpError(500, 'AI Generation failed.');
   }
 
-  // 4. Save to Database
-  await context.entities.ContentHistory.create({
-    data: {
-      userId: context.user.id,
-      title: 'New Project', // In a real app, we'd fetch video title
-      sourceUrl: url,
-      summary: mode === 'summary' ? generatedText : undefined,
-      linkedin: mode === 'linkedin' ? generatedText : undefined,
-      twitter: mode === 'twitter' ? generatedText : undefined,
-      blog: mode === 'blog' ? generatedText : undefined,
-    },
-  });
+  // 4. Save to Database & Deduct Credit
+  // Use a transaction to ensure atomicity
+  const [contentHistory] = await context.entities.$transaction([
+    context.entities.ContentHistory.create({
+      data: {
+        userId: context.user.id,
+        title: 'New Project', // In a real app, we'd fetch video title
+        sourceUrl: url,
+        summary: mode === 'summary' ? generatedText : undefined,
+        linkedin: mode === 'linkedin' ? generatedText : undefined,
+        twitter: mode === 'twitter' ? generatedText : undefined,
+        blog: mode === 'blog' ? generatedText : undefined,
+      },
+    }),
+    context.entities.User.update({
+      where: { id: context.user.id },
+      data: {
+        credits: {
+          decrement: isPro ? 0 : 1, // Only deduct if not pro
+        },
+      },
+    }),
+  ]);
+
+  return contentHistory;
 };
