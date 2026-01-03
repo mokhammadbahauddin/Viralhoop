@@ -3976,3 +3976,1719 @@
 [33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
 [33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
 [33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:00:32 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:32 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:32 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:32 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:00:42 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:42 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:42 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:42 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:00:51 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:51 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:51 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:00:51 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:01:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:01:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:01:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:01:35 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:35 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:35 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:35 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:01:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:01:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:01:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:02:06 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:06 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:06 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:06 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:02:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:02:26 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:26 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:26 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:26 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:02:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:02:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:02:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:02:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:03:04 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:04 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:04 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:04 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:03:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:03:24 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:24 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:24 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:24 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:03:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:03:43 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:43 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:43 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:43 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:03:52 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:52 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:52 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:03:52 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:04:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:02 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:04:12 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:12 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:12 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:12 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:04:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:04:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:04:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:04:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:04:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:05:00 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:00 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:00 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:00 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:05:10 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:10 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:10 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:10 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:05:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:21 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:05:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:31 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:05:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:40 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:05:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:50 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:05:59 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:59 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:59 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:05:59 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:06:09 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:09 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:09 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:09 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:06:18 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:18 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:18 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:18 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:06:28 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:28 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:28 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:28 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:06:38 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:38 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:38 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:38 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:06:47 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:47 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:47 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:47 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:06:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:06:57 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:07:07 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:07 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:07 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:07 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:07:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:16 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:07:27 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:27 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:27 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:27 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:07:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:36 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:07:46 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:46 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:46 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:46 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:07:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:07:55 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:08:05 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:05 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:05 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:05 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:08:15 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:15 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:15 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:15 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 6:08:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 6:08:25 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 7:11:39 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:11:39 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:11:39 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:11:39 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 7:11:58 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:11:58 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:11:58 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:11:58 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 7:12:19 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:19 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:19 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:19 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 7:12:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:33 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 7:12:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:12:45 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 7:13:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:14 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css[33m
+✅ --- SDK built successfully. ----------------------------------------------------
+[0m
+[33m
+✅ --- Your wasp project has successfully compiled. -------------------------------
+[0m
+[33m
+✅ --- Recompilation on file change succeeded. ------------------------------------
+[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] changed tsconfig file detected: /app/template/app/.wasp/out/web-app/tsconfig.vite.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] .env changed, restarting server...
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] vite/validateEnv.ts changed, restarting server...
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] vite/detectServerImports.ts changed, restarting server...
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] vite.config.ts changed, restarting server...
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) page reload src/router.tsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) page reload src/index.tsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) page reload src/auth/pages/createAuthRequiredPage.jsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) hmr update /src/components/DefaultRootErrorBoundary.tsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) hmr update /src/components/FullPageWrapper.tsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) page reload src/components/Loader.module.css
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) hmr update /src/components/Loader.tsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:16 AM [vite] (client) hmr update /src/components/Message.tsx
+[36m[[0m [36mClient[0m [36m][0m 7:13:17 AM [vite] server restarted.
+[36m[[0m [36mClient[0m [36m][0m
+[36m[[0m [36mClient[0m [36m][0m   ➜  Local:   http://localhost:5173/
+[36m[[0m [36mClient[0m [36m][0m   ➜  Network: use --host to expose
+[36m[[0m [36mClient[0m [36m][0m
+[36m[[0m [36mClient[0m [36m][0m   ➜  Local:   http://localhost:5173/
+[36m[[0m [36mClient[0m [36m][0m   ➜  Network: use --host to expose
+[36m[[0m [36mClient[0m [36m][0m
+[36m[[0m [36mClient[0m [36m][0m   ➜  Local:   http://localhost:5173/
+[36m[[0m [36mClient[0m [36m][0m   ➜  Network: use --host to expose
+[36m[[0m [36mClient[0m [36m][0m
+[36m[[0m [36mClient[0m [36m][0m   ➜  Local:   http://localhost:5173/
+[36m[[0m [36mClient[0m [36m][0m   ➜  Network: use --host to exposewasp-bin: /app/template/app/.wasp/out/: removeDirectoryRecursive:removeContentsRecursive:removeDirectory: unsatisfied constraints (Directory not empty)

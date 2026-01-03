@@ -1,159 +1,53 @@
-import { type Prisma } from "@prisma/client";
-import { type User } from "wasp/entities";
-import { HttpError, prisma } from "wasp/server";
-import {
-  type GetPaginatedUsers,
-  type UpdateIsUserAdminById,
-} from "wasp/server/operations";
-import * as z from "zod";
-import { SubscriptionStatus } from "../payment/plans";
-import { ensureArgsSchemaOrThrowHttpError } from "../server/validation";
+import { User, TeamMember } from 'wasp/entities';
+import { HttpError } from 'wasp/server';
+import { GetTeamMembers, InviteTeamMember, UpdateUser } from 'wasp/server/operations';
 
-const updateUserAdminByIdInputSchema = z.object({
-  id: z.string().nonempty(),
-  isAdmin: z.boolean(),
-});
-
-type UpdateUserAdminByIdInput = z.infer<typeof updateUserAdminByIdInputSchema>;
-
-export const updateIsUserAdminById: UpdateIsUserAdminById<
-  UpdateUserAdminByIdInput,
-  User
-> = async (rawArgs, context) => {
-  const { id, isAdmin } = ensureArgsSchemaOrThrowHttpError(
-    updateUserAdminByIdInputSchema,
-    rawArgs,
-  );
-
+export const getTeamMembers: GetTeamMembers<void, TeamMember[]> = async (args, context) => {
   if (!context.user) {
-    throw new HttpError(
-      401,
-      "Only authenticated users are allowed to perform this operation",
-    );
+    throw new HttpError(401);
   }
-
-  if (!context.user.isAdmin) {
-    throw new HttpError(
-      403,
-      "Only admins are allowed to perform this operation",
-    );
-  }
-
-  return context.entities.User.update({
-    where: { id },
-    data: { isAdmin },
+  return context.entities.TeamMember.findMany({
+    where: { userId: context.user.id },
+    orderBy: { createdAt: 'desc' },
   });
 };
 
-type GetPaginatedUsersOutput = {
-  users: Pick<
-    User,
-    | "id"
-    | "email"
-    | "username"
-    | "subscriptionStatus"
-    | "paymentProcessorUserId"
-    | "isAdmin"
-  >[];
-  totalPages: number;
+type InviteTeamMemberInput = {
+  email: string;
+  role: string;
 };
 
-const getPaginatorArgsSchema = z.object({
-  skipPages: z.number(),
-  filter: z.object({
-    emailContains: z.string().nonempty().optional(),
-    isAdmin: z.boolean().optional(),
-    subscriptionStatusIn: z
-      .array(z.nativeEnum(SubscriptionStatus).nullable())
-      .optional(),
-  }),
-});
-
-type GetPaginatedUsersInput = z.infer<typeof getPaginatorArgsSchema>;
-
-export const getPaginatedUsers: GetPaginatedUsers<
-  GetPaginatedUsersInput,
-  GetPaginatedUsersOutput
-> = async (rawArgs, context) => {
+export const inviteTeamMember: InviteTeamMember<InviteTeamMemberInput, TeamMember> = async ({ email, role }, context) => {
   if (!context.user) {
-    throw new HttpError(
-      401,
-      "Only authenticated users are allowed to perform this operation",
-    );
+    throw new HttpError(401);
   }
 
-  if (!context.user.isAdmin) {
-    throw new HttpError(
-      403,
-      "Only admins are allowed to perform this operation",
-    );
+  // In a real app, we would send an email here.
+  // For now, just create the record.
+
+  return context.entities.TeamMember.create({
+    data: {
+      email,
+      role,
+      status: 'Pending',
+      userId: context.user.id,
+    },
+  });
+};
+
+type UpdateUserInput = {
+  username?: string;
+};
+
+export const updateUser: UpdateUser<UpdateUserInput, User> = async ({ username }, context) => {
+  if (!context.user) {
+    throw new HttpError(401);
   }
 
-  const {
-    skipPages,
-    filter: {
-      subscriptionStatusIn: subscriptionStatus,
-      emailContains,
-      isAdmin,
+  return context.entities.User.update({
+    where: { id: context.user.id },
+    data: {
+      username,
     },
-  } = ensureArgsSchemaOrThrowHttpError(getPaginatorArgsSchema, rawArgs);
-
-  const includeUnsubscribedUsers = !!subscriptionStatus?.some(
-    (status) => status === null,
-  );
-  const desiredSubscriptionStatuses = subscriptionStatus?.filter(
-    (status) => status !== null,
-  );
-
-  const pageSize = 10;
-
-  const userPageQuery: Prisma.UserFindManyArgs = {
-    skip: skipPages * pageSize,
-    take: pageSize,
-    where: {
-      AND: [
-        {
-          email: {
-            contains: emailContains,
-            // mode: "insensitive", // SQLite doesn't support insensitive mode
-          },
-          isAdmin,
-        },
-        {
-          OR: [
-            {
-              subscriptionStatus: {
-                in: desiredSubscriptionStatuses,
-              },
-            },
-            {
-              subscriptionStatus: includeUnsubscribedUsers ? null : undefined,
-            },
-          ],
-        },
-      ],
-    },
-    select: {
-      id: true,
-      email: true,
-      username: true,
-      isAdmin: true,
-      subscriptionStatus: true,
-      paymentProcessorUserId: true,
-    },
-    orderBy: {
-      username: "asc",
-    },
-  };
-
-  const [pageOfUsers, totalUsers] = await prisma.$transaction([
-    context.entities.User.findMany(userPageQuery),
-    context.entities.User.count({ where: userPageQuery.where }),
-  ]);
-  const totalPages = Math.ceil(totalUsers / pageSize);
-
-  return {
-    users: pageOfUsers,
-    totalPages,
-  };
+  });
 };

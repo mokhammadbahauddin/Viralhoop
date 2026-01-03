@@ -41,6 +41,7 @@ import { AnalyticsView } from './AnalyticsView';
 import { TeamPage } from './TeamPage';
 import { AssetsPage } from './AssetsPage';
 import { SettingsPage } from './SettingsPage';
+import { SeoPage } from './SeoPage';
 
 export default function DashboardPage() {
   const { data: user } = useAuth();
@@ -475,18 +476,8 @@ export default function DashboardPage() {
         {/* VIEW: SETTINGS */}
         {activeTab === 'settings' && <SettingsPage />}
 
-        {/* VIEW: SEO (Still placeholder if needed, or link to Docs) */}
-        {activeTab === 'seo' && (
-             <div className="flex-1 bg-zinc-50 p-6 flex items-center justify-center animate-enter">
-                <div className="text-center">
-                    <div className="w-16 h-16 bg-zinc-100 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-zinc-200">
-                        <Search className="w-6 h-6 text-zinc-300" />
-                    </div>
-                    <h2 className="text-xl font-semibold text-zinc-900">SEO Intelligence</h2>
-                    <p className="text-zinc-500 mt-2">Advanced keyword tracking coming in the next update.</p>
-                </div>
-            </div>
-        )}
+        {/* VIEW: SEO */}
+        {activeTab === 'seo' && <SeoPage />}
 
       </main>
     </div>

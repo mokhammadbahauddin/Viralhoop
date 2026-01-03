@@ -51,21 +51,6 @@ app OpenSaaS {
         },
         userSignupFields: import { getEmailUserFields } from "@src/auth/userSignupFields",
       },
-      // Uncomment to enable Google Auth (check https://wasp.sh/docs/auth/social-auth/google for setup instructions):
-      // google: { // Guide for setting up Auth via Google
-      //   userSignupFields: import { getGoogleUserFields } from "@src/auth/userSignupFields",
-      //   configFn: import { getGoogleAuthConfig } from "@src/auth/userSignupFields",
-      // },
-      // Uncomment to enable GitHub Auth (check https://wasp.sh/docs/auth/social-auth/github for setup instructions):
-      // gitHub: {
-      //   userSignupFields: import { getGitHubUserFields } from "@src/auth/userSignupFields",
-      //   configFn: import { getGitHubAuthConfig } from "@src/auth/userSignupFields",
-      // },
-      // Uncomment to enable Discord Auth (check https://wasp.sh/docs/auth/social-auth/discord for setup instructions):
-      // discord: {
-      //   userSignupFields: import { getDiscordUserFields } from "@src/auth/userSignupFields",
-      //   configFn: import { getDiscordAuthConfig } from "@src/auth/userSignupFields"
-      // }
     },
     onAuthFailedRedirectTo: "/login",
     onAuthSucceededRedirectTo: "/demo-app",
@@ -96,6 +81,7 @@ app OpenSaaS {
   },
 }
 
+//#region Dashboard
 route DashboardRoute { path: "/dashboard", to: DashboardPage }
 page DashboardPage {
   authRequired: true,
@@ -116,6 +102,41 @@ query getAnalytics {
   fn: import { getAnalytics } from "@src/queries",
   entities: [User, ContentHistory]
 }
+//#endregion
+
+//#region SEO
+query getSeoKeywords {
+  fn: import { getSeoKeywords } from "@src/seo/operations",
+  entities: [User, SeoKeyword]
+}
+
+action createSeoKeyword {
+  fn: import { createSeoKeyword } from "@src/seo/operations",
+  entities: [User, SeoKeyword]
+}
+
+action deleteSeoKeyword {
+  fn: import { deleteSeoKeyword } from "@src/seo/operations",
+  entities: [User, SeoKeyword]
+}
+//#endregion
+
+//#region Team & User
+query getTeamMembers {
+  fn: import { getTeamMembers } from "@src/user/operations",
+  entities: [User, TeamMember]
+}
+
+action inviteTeamMember {
+  fn: import { inviteTeamMember } from "@src/user/operations",
+  entities: [User, TeamMember]
+}
+
+action updateUser {
+  fn: import { updateUser } from "@src/user/operations",
+  entities: [User]
+}
+//#endregion
 
 route LandingPageRoute { path: "/", to: LandingPage }
 page LandingPage {

@@ -1,13 +1,32 @@
-import React from 'react';
-import { User, Lock, Bell, Shield, LogOut } from 'lucide-react';
+import React, { useState } from 'react';
+import { User, Lock, Bell, Shield, LogOut, Check } from 'lucide-react';
 import { useAuth } from 'wasp/client/auth';
-import { logout } from 'wasp/client/auth';
+import { logout, useQuery } from 'wasp/client/auth';
+import { useAction, updateUser } from 'wasp/client/operations';
 import { Button } from '../../components/vertex/Button';
 import { Card } from '../../components/vertex/Card';
 import { Input } from '../../components/vertex/Input';
 
 export const SettingsPage = () => {
   const { data: user } = useAuth();
+  const updateUserFn = useAction(updateUser);
+  const [username, setUsername] = useState(user?.username || '');
+  const [isSaving, setIsSaving] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleUpdateProfile = async () => {
+      setIsSaving(true);
+      try {
+          await updateUserFn({ username });
+          setSuccess(true);
+          setTimeout(() => setSuccess(false), 2000);
+      } catch (error) {
+          console.error(error);
+          alert('Failed to update profile');
+      } finally {
+          setIsSaving(false);
+      }
+  };
 
   return (
     <div className="flex-1 bg-zinc-50 p-8 overflow-y-auto animate-enter">
@@ -26,13 +45,23 @@ export const SettingsPage = () => {
                              {user?.username?.[0]?.toUpperCase() || 'U'}
                         </div>
                         <div>
-                            <Button variant="secondary" size="sm">Change Avatar</Button>
+                             {/* Future: Avatar Upload */}
+                            <Button variant="secondary" size="sm" disabled>Change Avatar</Button>
                         </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <label className="text-xs font-medium text-zinc-700">Username</label>
-                            <Input defaultValue={user?.username || ''} className="bg-zinc-50" />
+                            <div className="flex gap-2">
+                                <Input
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    className="bg-zinc-50"
+                                />
+                                <Button onClick={handleUpdateProfile} disabled={isSaving || username === user?.username}>
+                                    {success ? <Check className="w-4 h-4" /> : 'Save'}
+                                </Button>
+                            </div>
                         </div>
                         <div className="space-y-2">
                             <label className="text-xs font-medium text-zinc-700">Email Address</label>
