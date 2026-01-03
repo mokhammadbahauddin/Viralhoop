@@ -1,16 +1,16 @@
 import { GenerateContent } from 'wasp/server/operations';
 import { YoutubeTranscript } from 'youtube-transcript';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { HttpError } from 'wasp/server';
+import { HttpError, prisma } from 'wasp/server';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 import { ContentHistory } from 'wasp/entities';
 
 export const generateContent: GenerateContent<
-  { url: string; mode: string },
+  { url: string; mode: string; keywords?: string },
   ContentHistory
-> = async ({ url, mode }, context) => {
+> = async ({ url, mode, keywords }, context) => {
   if (!context.user) {
     throw new HttpError(401);
   }
@@ -54,7 +54,7 @@ export const generateContent: GenerateContent<
       break;
     case 'blog':
       systemPrompt =
-        'Act as a SEO expert. Write a blog post based on this transcript. Include H1, H2, and relevant keywords.';
+        `Act as a SEO expert. Write a blog post based on this transcript. Include H1, H2, and relevant keywords.${keywords ? ` Focus on these target keywords: ${keywords}.` : ''}`;
       break;
     case 'summary':
     default:
@@ -77,7 +77,7 @@ export const generateContent: GenerateContent<
 
   // 4. Save to Database & Deduct Credit
   // Use a transaction to ensure atomicity
-  const [contentHistory] = await context.entities.$transaction([
+  const [contentHistory] = await prisma.$transaction([
     context.entities.ContentHistory.create({
       data: {
         userId: context.user.id,

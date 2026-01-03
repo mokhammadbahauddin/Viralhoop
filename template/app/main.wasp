@@ -99,7 +99,7 @@ app OpenSaaS {
 route DashboardRoute { path: "/dashboard", to: DashboardPage }
 page DashboardPage {
   authRequired: true,
-  component: import DashboardPage from "@src/client/pages/DashboardPage"
+  component: import DashboardPage from "@src/client/pages/dashboard/DashboardPage"
 }
 
 action generateContent {
@@ -109,6 +109,11 @@ action generateContent {
 
 query getHistory {
   fn: import { getHistory } from "@src/queries",
+  entities: [User, ContentHistory]
+}
+
+query getAnalytics {
+  fn: import { getAnalytics } from "@src/queries",
   entities: [User, ContentHistory]
 }
 

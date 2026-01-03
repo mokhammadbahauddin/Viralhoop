@@ -3,10 +3,10 @@ import { useAction, useQuery } from 'wasp/client/operations';
 import { generateContent, getHistory } from 'wasp/client/operations';
 import { useAuth } from 'wasp/client/auth';
 import { Link } from 'react-router-dom';
-import { Button } from '../components/vertex/Button';
-import { Input } from '../components/vertex/Input';
-import { Card } from '../components/vertex/Card';
-import { cn } from '../cn';
+import { Button } from '../../components/vertex/Button';
+import { Input } from '../../components/vertex/Input';
+import { Card } from '../../components/vertex/Card';
+import { cn } from '../../cn';
 import {
   Sparkles,
   Link as LinkIcon,
@@ -36,12 +36,14 @@ import {
   Link2,
   Check
 } from 'lucide-react';
+import { AnalyticsView } from './AnalyticsView';
 
 export default function DashboardPage() {
   const { data: user } = useAuth();
   const [activeTab, setActiveTab] = useState('home'); // home, history, templates, analytics, seo, team, assets, settings
   const [url, setUrl] = useState('');
   const [mode, setMode] = useState('summary'); // summary, linkedin, twitter, blog
+  const [keywords, setKeywords] = useState('');
   const [generatedContent, setGeneratedContent] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
 
@@ -65,7 +67,7 @@ export default function DashboardPage() {
 
     setIsGenerating(true);
     try {
-      const result = await generateContentFn({ url, mode });
+      const result = await generateContentFn({ url, mode, keywords: mode === 'blog' ? keywords : undefined });
       setGeneratedContent(result.summary || result.linkedin || result.twitter || result.blog || "");
       await refetchHistory();
     } catch (error: any) {
@@ -153,7 +155,7 @@ export default function DashboardPage() {
                      <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
                 </div>
                 <div className="flex-1 overflow-hidden">
-                    <p class="text-sm font-medium text-zinc-900 truncate">{user?.username || 'User'}</p>
+                    <p className="text-sm font-medium text-zinc-900 truncate">{user?.username || 'User'}</p>
                     <p className="text-[10px] text-zinc-500 truncate">{user?.email}</p>
                 </div>
                 <Settings className="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 transition-colors" />
@@ -239,6 +241,19 @@ export default function DashboardPage() {
                                     ))}
                                 </div>
                             </div>
+
+                            {/* Keywords Input (Blog Only) */}
+                            {mode === 'blog' && (
+                                <div className="animate-enter">
+                                    <label className="text-xs font-medium text-zinc-700 mb-2 block">Target Keywords</label>
+                                    <Input
+                                      placeholder="e.g. saas growth, ai tools"
+                                      className="input-ring"
+                                      value={keywords}
+                                      onChange={(e) => setKeywords(e.target.value)}
+                                    />
+                                </div>
+                            )}
 
                             {/* Sliders Mock */}
                             <div>
@@ -372,8 +387,11 @@ export default function DashboardPage() {
             </div>
         )}
 
+        {/* VIEW: ANALYTICS */}
+        {activeTab === 'analytics' && <AnalyticsView />}
+
         {/* VIEW: PLACEHOLDERS */}
-        {['templates', 'analytics', 'seo', 'team', 'assets', 'settings'].includes(activeTab) && (
+        {['templates', 'seo', 'team', 'assets', 'settings'].includes(activeTab) && (
             <div className="flex-1 bg-zinc-50 p-6 flex items-center justify-center animate-enter">
                 <div className="text-center">
                     <div className="w-16 h-16 bg-zinc-100 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-zinc-200">
