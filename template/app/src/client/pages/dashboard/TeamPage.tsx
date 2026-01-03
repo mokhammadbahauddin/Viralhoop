@@ -4,10 +4,12 @@ import { Users, Mail, UserPlus, MoreHorizontal, Loader2 } from 'lucide-react';
 import { Button } from '../../components/vertex/Button';
 import { Card } from '../../components/vertex/Card';
 import { Input } from '../../components/vertex/Input';
+import { useToast } from '../../hooks/use-toast';
 
 export const TeamPage = () => {
   const { data: members, isLoading, refetch } = useQuery(getTeamMembers);
   const inviteMemberFn = useAction(inviteTeamMember);
+  const { toast } = useToast();
 
   const [email, setEmail] = useState('');
   const [isInviting, setIsInviting] = useState(false);
@@ -19,9 +21,17 @@ export const TeamPage = () => {
         await inviteMemberFn({ email, role: 'Editor' });
         setEmail('');
         refetch();
+        toast({
+            title: "Invitation Sent",
+            description: `Invited ${email} to the team.`,
+        });
     } catch (error) {
         console.error(error);
-        alert('Failed to invite member');
+        toast({
+            title: "Error",
+            description: "Failed to invite member",
+            variant: "destructive",
+        });
     } finally {
         setIsInviting(false);
     }

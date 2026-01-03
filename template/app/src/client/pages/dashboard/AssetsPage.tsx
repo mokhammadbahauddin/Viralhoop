@@ -4,6 +4,7 @@ import { Folder, Upload, Image, FileText, Film, Loader2, Trash2 } from 'lucide-r
 import { Button } from '../../components/vertex/Button';
 import { Card } from '../../components/vertex/Card';
 import axios from 'axios';
+import { useToast } from '../../hooks/use-toast';
 
 // Define allowed types strictly as per Wasp operations validation if needed,
 // but for now, just casting to any or using valid string check.
@@ -15,6 +16,7 @@ export const AssetsPage = () => {
   const getUploadUrlFn = useAction(createFileUploadUrl);
   const addFileToDbFn = useAction(addFileToDb);
   const deleteFileFn = useAction(deleteFile);
+  const { toast } = useToast();
 
   const [isUploading, setIsUploading] = useState(false);
 
@@ -49,9 +51,17 @@ export const AssetsPage = () => {
           });
 
           refetch();
+          toast({
+            title: "Upload Successful",
+            description: `${file.name} has been added to assets.`,
+        });
       } catch (error) {
           console.error(error);
-          alert('Upload failed. Type might not be supported.');
+          toast({
+            title: "Upload Failed",
+            description: "Type might not be supported or network error.",
+            variant: "destructive",
+        });
       } finally {
           setIsUploading(false);
           // Reset input
@@ -64,9 +74,17 @@ export const AssetsPage = () => {
       try {
           await deleteFileFn({ id });
           refetch();
+          toast({
+            title: "File Deleted",
+            description: "Asset removed successfully.",
+        });
       } catch (e) {
           console.error(e);
-          alert('Delete failed');
+          toast({
+            title: "Error",
+            description: "Delete failed",
+            variant: "destructive",
+        });
       }
   }
 

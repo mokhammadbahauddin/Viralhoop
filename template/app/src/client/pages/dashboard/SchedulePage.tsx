@@ -5,10 +5,12 @@ import { Button } from '../../components/vertex/Button';
 import { Card } from '../../components/vertex/Card';
 import { Input } from '../../components/vertex/Input';
 import { cn } from '../../cn';
+import { useToast } from '../../hooks/use-toast';
 
 export const SchedulePage = () => {
     const { data: posts, isLoading, refetch } = useQuery(getScheduledPosts);
     const schedulePostFn = useAction(schedulePost);
+    const { toast } = useToast();
 
     const [content, setContent] = useState('');
     const [platform, setPlatform] = useState('LinkedIn');
@@ -26,9 +28,17 @@ export const SchedulePage = () => {
             setDate('');
             setTime('');
             refetch();
+            toast({
+                title: "Post Scheduled",
+                description: `Your ${platform} post is scheduled for ${new Date(scheduledFor).toLocaleString()}.`,
+            });
         } catch (error) {
             console.error(error);
-            alert('Failed to schedule post');
+            toast({
+                title: "Error",
+                description: "Failed to schedule post",
+                variant: "destructive",
+            });
         } finally {
             setIsScheduling(false);
         }

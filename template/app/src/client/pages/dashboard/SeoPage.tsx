@@ -5,6 +5,7 @@ import { Input } from '../../components/vertex/Input';
 import { Card } from '../../components/vertex/Card';
 import { Search, Plus, Trash2, TrendingUp, BarChart } from 'lucide-react';
 import { cn } from '../../cn';
+import { useToast } from '../../hooks/use-toast';
 
 export const SeoPage = () => {
   const { data: keywords, isLoading, refetch } = useQuery(getSeoKeywords);
@@ -12,6 +13,7 @@ export const SeoPage = () => {
   const deleteKeywordFn = useAction(deleteSeoKeyword);
   const [newKeyword, setNewKeyword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleAdd = async () => {
     if (!newKeyword) return;
@@ -20,22 +22,40 @@ export const SeoPage = () => {
         await createKeywordFn({ keyword: newKeyword });
         setNewKeyword('');
         refetch();
+        toast({
+            title: "Keyword Added",
+            description: `Now tracking "${newKeyword}"`,
+        });
     } catch (error) {
         console.error(error);
-        alert('Failed to add keyword');
+        toast({
+            title: "Error",
+            description: "Failed to add keyword",
+            variant: "destructive",
+        });
     } finally {
         setIsSubmitting(false);
     }
   };
 
   const handleDelete = async (id: string) => {
+      // confirm is still useful for destructive actions, but we could use a custom dialog.
+      // For speed, keeping confirm or just doing it with an undo toast (undo not impl).
       if(!confirm('Delete this keyword?')) return;
       try {
           await deleteKeywordFn({ id });
           refetch();
+          toast({
+            title: "Keyword Deleted",
+            description: "Stopped tracking keyword.",
+        });
       } catch (error) {
           console.error(error);
-          alert('Failed to delete keyword');
+          toast({
+            title: "Error",
+            description: "Failed to delete keyword",
+            variant: "destructive",
+        });
       }
   };
 

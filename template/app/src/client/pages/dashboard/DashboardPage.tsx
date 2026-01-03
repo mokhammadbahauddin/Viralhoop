@@ -44,6 +44,7 @@ import { AssetsPage } from './AssetsPage';
 import { SettingsPage } from './SettingsPage';
 import { SeoPage } from './SeoPage';
 import { SchedulePage } from './SchedulePage';
+import { useToast } from '../../hooks/use-toast';
 
 export default function DashboardPage() {
   const { data: user } = useAuth();
@@ -51,6 +52,7 @@ export default function DashboardPage() {
   const [url, setUrl] = useState('');
   const [mode, setMode] = useState('summary');
   const [keywords, setKeywords] = useState('');
+  const { toast } = useToast();
 
   // State for result content
   const [generatedContent, setGeneratedContent] = useState('');
@@ -69,11 +71,19 @@ export default function DashboardPage() {
     if (!url) return;
 
     if (!isPro && mode !== 'summary') {
-        alert("Upgrade to Pro to use this feature.");
+        toast({
+            title: "Pro Feature",
+            description: "Upgrade to Pro to unlock LinkedIn, Twitter, and Blog modes.",
+            variant: "destructive" // Or default with icon
+        });
         return;
     }
     if (!isPro && credits <= 0) {
-        alert("Insufficient credits. Upgrade to Pro or wait for refill.");
+        toast({
+            title: "Insufficient Credits",
+            description: "You have 0 credits remaining. Upgrade for unlimited usage.",
+            variant: "destructive"
+        });
         return;
     }
 
@@ -95,13 +105,32 @@ export default function DashboardPage() {
       if (result.viralReasoning) setViralReasoning(result.viralReasoning);
 
       await refetchHistory();
+
+      toast({
+          title: "Content Generated",
+          description: "Your content is ready for review.",
+      });
+
     } catch (error: any) {
       console.error(error);
-      alert(error.message || 'Failed to generate content. Check console.');
+      toast({
+          title: "Generation Failed",
+          description: error.message || "Something went wrong. Please check the URL and try again.",
+          variant: "destructive"
+      });
     } finally {
       setIsGenerating(false);
     }
   };
+
+  const copyToClipboard = () => {
+      if (!generatedContent) return;
+      navigator.clipboard.writeText(generatedContent);
+      toast({
+          title: "Copied",
+          description: "Content copied to clipboard.",
+      });
+  }
 
   const NavItem = ({ id, label, icon: Icon }: { id: string; label: string; icon: any }) => (
     <button
@@ -182,7 +211,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="flex-1 overflow-hidden">
                     <p className="text-sm font-medium text-zinc-900 truncate">{user?.username || 'User'}</p>
-                    <p className="text--[10px] text-zinc-500 truncate">{user?.email}</p>
+                    <p className="text-[10px] text-zinc-500 truncate">{user?.email}</p>
                 </div>
                 <Settings className="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 transition-colors" />
             </button>
@@ -323,7 +352,7 @@ export default function DashboardPage() {
                             <Button variant="secondary" size="sm" onClick={() => setActiveTab('schedule')} title="Schedule">
                                 <Calendar className="w-4 h-4 mr-2" /> Schedule
                             </Button>
-                            <Button variant="secondary" size="sm" title="Copy"><Copy className="w-4 h-4" /></Button>
+                            <Button variant="secondary" size="sm" title="Copy" onClick={copyToClipboard}><Copy className="w-4 h-4" /></Button>
                             <Button variant="secondary" size="sm"><Download className="w-3 h-3 mr-2"/> Export</Button>
                         </div>
                      </div>
