@@ -8,9 +8,9 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 import { ContentHistory } from 'wasp/entities';
 
 export const generateContent: GenerateContent<
-  { url: string; mode: string; keywords?: string },
+  { url: string; mode: string; keywords?: string; tone?: string },
   ContentHistory
-> = async ({ url, mode, keywords }, context) => {
+> = async ({ url, mode, keywords, tone }, context) => {
   if (!context.user) {
     throw new HttpError(401);
   }
@@ -37,9 +37,6 @@ export const generateContent: GenerateContent<
   }
 
   // 2. Select Prompt
-  // We now ask for JSON output to parse Viral Score and Content cleanly.
-  // The system prompt should enforce a JSON schema.
-
   let modeSpecificPrompt = '';
   switch (mode) {
     case 'linkedin':
@@ -61,6 +58,8 @@ export const generateContent: GenerateContent<
       break;
   }
 
+  const tonePrompt = tone ? `Tone: Adopt a "${tone}" tone of voice.` : '';
+
   const jsonSchema = `
   {
     "content": "The generated content string here...",
@@ -71,6 +70,7 @@ export const generateContent: GenerateContent<
 
   const finalPrompt = `
     ${modeSpecificPrompt}
+    ${tonePrompt}
 
     ANALYZE the viral potential of the source material.
 
@@ -99,7 +99,6 @@ export const generateContent: GenerateContent<
       viralReasoning = parsed.viralReasoning || '';
     } catch (parseError) {
       console.error("JSON Parse Error", parseError);
-      // Fallback if model fails to output JSON (rare with responseMimeType but possible)
       generatedContent = jsonText;
     }
 
@@ -115,7 +114,6 @@ export const generateContent: GenerateContent<
         userId: context.user.id,
         title: 'New Project',
         sourceUrl: url,
-        // Save content to the correct field
         summary: mode === 'summary' ? generatedContent : undefined,
         linkedin: mode === 'linkedin' ? generatedContent : undefined,
         twitter: mode === 'twitter' ? generatedContent : undefined,

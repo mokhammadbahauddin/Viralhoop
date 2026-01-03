@@ -36,7 +36,8 @@ import {
   Link2,
   Check,
   Zap,
-  Calendar
+  Calendar,
+  Play
 } from 'lucide-react';
 import { AnalyticsView } from './AnalyticsView';
 import { TeamPage } from './TeamPage';
@@ -52,6 +53,7 @@ export default function DashboardPage() {
   const [url, setUrl] = useState('');
   const [mode, setMode] = useState('summary');
   const [keywords, setKeywords] = useState('');
+  const [tone, setTone] = useState('Professional & Authoritative');
   const { toast } = useToast();
 
   // State for result content
@@ -66,6 +68,14 @@ export default function DashboardPage() {
 
   const isPro = user?.subscriptionStatus === 'active';
   const credits = user?.credits ?? 0;
+
+  const getVideoId = (url: string) => {
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+      const match = url.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : null;
+  };
+
+  const videoId = getVideoId(url);
 
   const handleGenerate = async () => {
     if (!url) return;
@@ -94,7 +104,7 @@ export default function DashboardPage() {
     setViralReasoning(null);
 
     try {
-      const result = await generateContentFn({ url, mode, keywords: mode === 'blog' ? keywords : undefined });
+      const result = await generateContentFn({ url, mode, keywords: mode === 'blog' ? keywords : undefined, tone });
 
       const content = result.summary || result.linkedin || result.twitter || result.blog || "";
       setGeneratedContent(content);
@@ -261,6 +271,25 @@ export default function DashboardPage() {
                             </div>
                         </div>
 
+                        {/* Video Preview */}
+                        {videoId && (
+                            <div className="border border-zinc-200 rounded-xl overflow-hidden bg-white shadow-sm ring-1 ring-black/5 animate-enter">
+                                <div className="aspect-video bg-zinc-900 relative group cursor-pointer overflow-hidden">
+                                    <img src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`} className="w-full h-full object-cover opacity-80 transition-all duration-500 group-hover:scale-105 group-hover:opacity-60" onError={(e) => (e.currentTarget.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`)} />
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-lg transition-transform group-hover:scale-110">
+                                            <Play className="w-4 h-4 text-white fill-white" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="p-3 bg-white">
+                                    <p className="text-[10px] text-green-600 font-medium flex items-center gap-1">
+                                        <Check className="w-3 h-3" /> Ready to process
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+
                         {/* Settings */}
                         <div className="border-t border-zinc-100 pt-6 space-y-5">
                             <div>
@@ -307,6 +336,21 @@ export default function DashboardPage() {
                                     />
                                 </div>
                             )}
+
+                            {/* Brand Voice (New Phase 10) */}
+                            <div>
+                                <label className="text-xs font-medium text-zinc-700 mb-2 block">Brand Voice</label>
+                                <select
+                                    value={tone}
+                                    onChange={(e) => setTone(e.target.value)}
+                                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm text-zinc-700 focus:outline-none focus:border-zinc-400 focus:bg-white transition-all appearance-none cursor-pointer"
+                                >
+                                    <option>Professional & Authoritative</option>
+                                    <option>Casual & Friendly</option>
+                                    <option>Witty & Viral</option>
+                                    <option>Educational & Detailed</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
