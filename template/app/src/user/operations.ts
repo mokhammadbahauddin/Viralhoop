@@ -1,6 +1,6 @@
 import { User, TeamMember } from 'wasp/entities';
 import { HttpError } from 'wasp/server';
-import { GetTeamMembers, InviteTeamMember, UpdateUser } from 'wasp/server/operations';
+import { GetTeamMembers, InviteTeamMember, UpdateUser, GetPaginatedUsers, UpdateIsUserAdminById } from 'wasp/server/operations';
 
 export const getTeamMembers: GetTeamMembers<void, TeamMember[]> = async (args, context) => {
   if (!context.user) {
@@ -21,9 +21,6 @@ export const inviteTeamMember: InviteTeamMember<InviteTeamMemberInput, TeamMembe
   if (!context.user) {
     throw new HttpError(401);
   }
-
-  // In a real app, we would send an email here.
-  // For now, just create the record.
 
   return context.entities.TeamMember.create({
     data: {
@@ -48,6 +45,102 @@ export const updateUser: UpdateUser<UpdateUserInput, User> = async ({ username }
     where: { id: context.user.id },
     data: {
       username,
+    },
+  });
+};
+
+// --- Admin Operations Restored ---
+
+type GetPaginatedUsersInput = {
+  skipPages: number;
+  filter?: {
+    emailContains?: string;
+    isAdmin?: boolean;
+    subscriptionStatusIn?: (string | null)[];
+  };
+};
+
+type GetPaginatedUsersOutput = {
+  users: User[];
+  totalPages: number;
+};
+
+export const getPaginatedUsers: GetPaginatedUsers<
+  GetPaginatedUsersInput,
+  GetPaginatedUsersOutput
+> = async (args, context) => {
+  if (!context.user?.isAdmin) {
+    throw new HttpError(401);
+  }
+
+  const PAGE_SIZE = 10;
+  const skip = args.skipPages * PAGE_SIZE;
+  const take = PAGE_SIZE;
+
+  const allSubscriptionStatusOptions = args.filter?.subscriptionStatusIn;
+  const hasSubscriptionStatusFilter =
+    allSubscriptionStatusOptions && allSubscriptionStatusOptions.length > 0;
+
+  const whereArgs = {
+    AND: [
+      {
+        email: {
+          contains: args.filter?.emailContains,
+          mode: "insensitive", // Prisma case insensitive
+        },
+      },
+      {
+        isAdmin: args.filter?.isAdmin,
+      },
+      {
+        subscriptionStatus: {
+          in: hasSubscriptionStatusFilter
+            ? allSubscriptionStatusOptions
+            : undefined,
+        },
+      },
+    ],
+  } as any;
+
+  const users = await context.entities.User.findMany({
+    skip: skip,
+    take: take,
+    where: whereArgs,
+    orderBy: {
+      id: "desc",
+    },
+  });
+
+  const totalUserCount = await context.entities.User.count({
+    where: whereArgs,
+  });
+  const totalPages = Math.ceil(totalUserCount / take);
+
+  return {
+    users,
+    totalPages,
+  };
+};
+
+type UpdateIsUserAdminByIdInput = {
+  id: string;
+  isAdmin: boolean;
+};
+
+export const updateIsUserAdminById: UpdateIsUserAdminById<
+  UpdateIsUserAdminByIdInput,
+  User
+> = async ({ id, isAdmin }, context) => {
+  if (!context.user?.isAdmin) {
+    throw new HttpError(401);
+  }
+
+  return context.entities.User.update({
+    where: {
+      id,
+    },
+    data: {
+      isAdmin,
     },
   });
 };

@@ -35,19 +35,21 @@ import {
   Italic,
   Link2,
   Check,
-  Zap
+  Zap,
+  Calendar
 } from 'lucide-react';
 import { AnalyticsView } from './AnalyticsView';
 import { TeamPage } from './TeamPage';
 import { AssetsPage } from './AssetsPage';
 import { SettingsPage } from './SettingsPage';
 import { SeoPage } from './SeoPage';
+import { SchedulePage } from './SchedulePage';
 
 export default function DashboardPage() {
   const { data: user } = useAuth();
-  const [activeTab, setActiveTab] = useState('home'); // home, history, templates, analytics, seo, team, assets, settings
+  const [activeTab, setActiveTab] = useState('home');
   const [url, setUrl] = useState('');
-  const [mode, setMode] = useState('summary'); // summary, linkedin, twitter, blog
+  const [mode, setMode] = useState('summary');
   const [keywords, setKeywords] = useState('');
 
   // State for result content
@@ -137,6 +139,7 @@ export default function DashboardPage() {
                 <NavItem id="home" label="New Project" icon={PlusCircle} />
                 <NavItem id="history" label="History" icon={Clock} />
                 <NavItem id="templates" label="Templates" icon={LayoutGrid} />
+                <NavItem id="schedule" label="Calendar" icon={Calendar} />
             </div>
 
             <div>
@@ -179,7 +182,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="flex-1 overflow-hidden">
                     <p className="text-sm font-medium text-zinc-900 truncate">{user?.username || 'User'}</p>
-                    <p className="text-[10px] text-zinc-500 truncate">{user?.email}</p>
+                    <p className="text--[10px] text-zinc-500 truncate">{user?.email}</p>
                 </div>
                 <Settings className="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 transition-colors" />
             </button>
@@ -317,6 +320,9 @@ export default function DashboardPage() {
                             </div>
                         </div>
                         <div className="flex items-center gap-2">
+                            <Button variant="secondary" size="sm" onClick={() => setActiveTab('schedule')} title="Schedule">
+                                <Calendar className="w-4 h-4 mr-2" /> Schedule
+                            </Button>
                             <Button variant="secondary" size="sm" title="Copy"><Copy className="w-4 h-4" /></Button>
                             <Button variant="secondary" size="sm"><Download className="w-3 h-3 mr-2"/> Export</Button>
                         </div>
@@ -478,6 +484,9 @@ export default function DashboardPage() {
 
         {/* VIEW: SEO */}
         {activeTab === 'seo' && <SeoPage />}
+
+        {/* VIEW: SCHEDULE */}
+        {activeTab === 'schedule' && <SchedulePage />}
 
       </main>
     </div>

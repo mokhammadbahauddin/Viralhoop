@@ -121,6 +121,18 @@ action deleteSeoKeyword {
 }
 //#endregion
 
+//#region Scheduling
+query getScheduledPosts {
+  fn: import { getScheduledPosts } from "@src/scheduling/operations",
+  entities: [User, ScheduledPost]
+}
+
+action schedulePost {
+  fn: import { schedulePost } from "@src/scheduling/operations",
+  entities: [User, ScheduledPost]
+}
+//#endregion
+
 //#region Team & User
 query getTeamMembers {
   fn: import { getTeamMembers } from "@src/user/operations",
@@ -294,18 +306,6 @@ query getDailyStats {
   fn: import { getDailyStats } from "@src/analytics/operations",
   entities: [User, DailyStats]
 }
-
-// job dailyStatsJob {
-//   executor: PgBoss,
-//   perform: {
-//     fn: import { calculateDailyStats } from "@src/analytics/stats"
-//   },
-//   schedule: {
-//     cron: "0 * * * *" // every hour. useful in production
-//     // cron: "* * * * *" // every minute. useful for debugging
-//   },
-//   entities: [User, DailyStats, Logs, PageViewSource]
-// }
 //#endregion
 
 //#region Admin Dashboard
@@ -313,6 +313,11 @@ route AdminRoute { path: "/admin", to: AnalyticsDashboardPage }
 page AnalyticsDashboardPage {
   authRequired: true,
   component: import AnalyticsDashboardPage from "@src/admin/dashboards/analytics/AnalyticsDashboardPage"
+}
+
+query getAdminStats {
+    fn: import { getAdminStats } from "@src/admin/operations",
+    entities: [User, ContentHistory]
 }
 
 route AdminUsersRoute { path: "/admin/users", to: AdminUsersPage }
@@ -347,9 +352,6 @@ page NotFoundPage {
 //#endregion
 
 //#region Contact Form Messages
-// TODO:
-// add functionality to allow users to send messages to admin
-// and make them accessible via the admin dashboard
 route AdminMessagesRoute { path: "/admin/messages", to: AdminMessagesPage }
 page AdminMessagesPage {
   authRequired: true,

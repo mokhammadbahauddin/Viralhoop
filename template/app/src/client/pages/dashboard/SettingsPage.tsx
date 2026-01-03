@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { User, Lock, Bell, Shield, LogOut, Check } from 'lucide-react';
 import { useAuth } from 'wasp/client/auth';
-import { logout, useQuery } from 'wasp/client/auth';
+import { logout } from 'wasp/client/auth';
 import { useAction, updateUser } from 'wasp/client/operations';
 import { Button } from '../../components/vertex/Button';
 import { Card } from '../../components/vertex/Card';
