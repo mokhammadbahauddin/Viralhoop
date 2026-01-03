@@ -1,0 +1,33 @@
+
+[33m[[0m  [33mWasp[0m [1m[31m![0m[33m][0m npm error Missing script: "build"
+[33m[[0m  [33mWasp[0m [1m[31m![0m[33m][0m npm error
+[33m[[0m  [33mWasp[0m [1m[31m![0m[33m][0m npm error To see a list of scripts, run:
+[33m[[0m  [33mWasp[0m [1m[31m![0m[33m][0m npm error   npm run
+[33m[[0m  [33mWasp[0m [1m[31m![0m[33m][0m npm error A complete log of this run can be found in: /home/jules/.npm/_logs/2026-01-03T09_35_22_018Z-debug-0.log[33m
+🐝 --- Starting compilation and setup phase. Hold tight... ------------------------
+[0m
+[33m
+🐝 --- Compiling wasp project... --------------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 1[0m
+[31m
+
+❌ --- [Error] Compilation of wasp project failed: --------------------------------
+
+1 errors found[0m

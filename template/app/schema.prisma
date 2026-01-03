@@ -1,5 +1,5 @@
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -26,6 +26,73 @@ model User {
   contactFormMessages       ContactFormMessage[]
   tasks                     Task[]
   files                     File[]
+  contentHistory            ContentHistory[]
+  seoKeywords               SeoKeyword[]
+  teamMembers               TeamMember[]
+  scheduledPosts            ScheduledPost[]
+}
+
+model ContentHistory {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+
+  title     String
+  sourceUrl String
+  thumbnail String?
+
+  // The generated content
+  summary   String?
+  linkedin  String?
+  twitter   String?
+  blog      String?
+
+  // Metadata
+  duration  String?
+  channel   String?
+
+  // Viral Intelligence
+  viralScore     Int?      @default(0)
+  viralReasoning String?
+}
+
+model ScheduledPost {
+  id           String   @id @default(uuid())
+  createdAt    DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id])
+  userId       String
+
+  content      String
+  platform     String   // LinkedIn, Twitter, Blog
+  scheduledFor DateTime
+  status       String   @default("Pending") // Pending, Published, Failed
+}
+
+model SeoKeyword {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+
+  keyword   String
+  volume    Int      @default(0)
+  difficulty Int     @default(0)
+}
+
+model TeamMember {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+
+  email     String
+  role      String   @default("Editor")
+  status    String   @default("Pending")
 }
 
 model GptResponse {

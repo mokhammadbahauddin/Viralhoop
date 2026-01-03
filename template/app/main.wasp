@@ -51,21 +51,6 @@ app OpenSaaS {
         },
         userSignupFields: import { getEmailUserFields } from "@src/auth/userSignupFields",
       },
-      // Uncomment to enable Google Auth (check https://wasp.sh/docs/auth/social-auth/google for setup instructions):
-      // google: { // Guide for setting up Auth via Google
-      //   userSignupFields: import { getGoogleUserFields } from "@src/auth/userSignupFields",
-      //   configFn: import { getGoogleAuthConfig } from "@src/auth/userSignupFields",
-      // },
-      // Uncomment to enable GitHub Auth (check https://wasp.sh/docs/auth/social-auth/github for setup instructions):
-      // gitHub: {
-      //   userSignupFields: import { getGitHubUserFields } from "@src/auth/userSignupFields",
-      //   configFn: import { getGitHubAuthConfig } from "@src/auth/userSignupFields",
-      // },
-      // Uncomment to enable Discord Auth (check https://wasp.sh/docs/auth/social-auth/discord for setup instructions):
-      // discord: {
-      //   userSignupFields: import { getDiscordUserFields } from "@src/auth/userSignupFields",
-      //   configFn: import { getDiscordAuthConfig } from "@src/auth/userSignupFields"
-      // }
     },
     onAuthFailedRedirectTo: "/login",
     onAuthSucceededRedirectTo: "/demo-app",
@@ -82,12 +67,12 @@ app OpenSaaS {
   client: {
     rootComponent: import App from "@src/client/App",
   },
-
   emailSender: {
     // NOTE: "Dummy" provider is just for local development purposes.
     //   Make sure to check the server logs for the email confirmation url (it will not be sent to an address)!
     //   Once you are ready for production, switch to e.g. "SendGrid" or "Mailgun" providers. Check out https://docs.opensaas.sh/guides/email-sending/ .
-    provider: Dummy,
+    // provider: Dummy,
+    provider: SendGrid,
     defaultFrom: {
       name: "Open SaaS App",
       // When using a real provider, e.g. SendGrid, you must use the same email address that you configured your account to send out emails with!
@@ -95,6 +80,75 @@ app OpenSaaS {
     },
   },
 }
+
+//#region Dashboard
+route DashboardRoute { path: "/dashboard", to: DashboardPage }
+page DashboardPage {
+  authRequired: true,
+  component: import DashboardPage from "@src/client/pages/dashboard/DashboardPage"
+}
+
+action generateContent {
+  fn: import { generateContent } from "@src/actions",
+  entities: [User, ContentHistory]
+}
+
+query getHistory {
+  fn: import { getHistory } from "@src/queries",
+  entities: [User, ContentHistory]
+}
+
+query getAnalytics {
+  fn: import { getAnalytics } from "@src/queries",
+  entities: [User, ContentHistory]
+}
+//#endregion
+
+//#region SEO
+query getSeoKeywords {
+  fn: import { getSeoKeywords } from "@src/seo/operations",
+  entities: [User, SeoKeyword]
+}
+
+action createSeoKeyword {
+  fn: import { createSeoKeyword } from "@src/seo/operations",
+  entities: [User, SeoKeyword]
+}
+
+action deleteSeoKeyword {
+  fn: import { deleteSeoKeyword } from "@src/seo/operations",
+  entities: [User, SeoKeyword]
+}
+//#endregion
+
+//#region Scheduling
+query getScheduledPosts {
+  fn: import { getScheduledPosts } from "@src/scheduling/operations",
+  entities: [User, ScheduledPost]
+}
+
+action schedulePost {
+  fn: import { schedulePost } from "@src/scheduling/operations",
+  entities: [User, ScheduledPost]
+}
+//#endregion
+
+//#region Team & User
+query getTeamMembers {
+  fn: import { getTeamMembers } from "@src/user/operations",
+  entities: [User, TeamMember]
+}
+
+action inviteTeamMember {
+  fn: import { inviteTeamMember } from "@src/user/operations",
+  entities: [User, TeamMember]
+}
+
+action updateUser {
+  fn: import { updateUser } from "@src/user/operations",
+  entities: [User]
+}
+//#endregion
 
 route LandingPageRoute { path: "/", to: LandingPage }
 page LandingPage {
@@ -252,18 +306,6 @@ query getDailyStats {
   fn: import { getDailyStats } from "@src/analytics/operations",
   entities: [User, DailyStats]
 }
-
-job dailyStatsJob {
-  executor: PgBoss,
-  perform: {
-    fn: import { calculateDailyStats } from "@src/analytics/stats"
-  },
-  schedule: {
-    cron: "0 * * * *" // every hour. useful in production
-    // cron: "* * * * *" // every minute. useful for debugging
-  },
-  entities: [User, DailyStats, Logs, PageViewSource]
-}
 //#endregion
 
 //#region Admin Dashboard
@@ -271,6 +313,11 @@ route AdminRoute { path: "/admin", to: AnalyticsDashboardPage }
 page AnalyticsDashboardPage {
   authRequired: true,
   component: import AnalyticsDashboardPage from "@src/admin/dashboards/analytics/AnalyticsDashboardPage"
+}
+
+query getAdminStats {
+    fn: import { getAdminStats } from "@src/admin/operations",
+    entities: [User, ContentHistory]
 }
 
 route AdminUsersRoute { path: "/admin/users", to: AdminUsersPage }
@@ -305,9 +352,6 @@ page NotFoundPage {
 //#endregion
 
 //#region Contact Form Messages
-// TODO:
-// add functionality to allow users to send messages to admin
-// and make them accessible via the admin dashboard
 route AdminMessagesRoute { path: "/admin/messages", to: AdminMessagesPage }
 page AdminMessagesPage {
   authRequired: true,

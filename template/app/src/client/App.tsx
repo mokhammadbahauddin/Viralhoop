@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { routes } from "wasp/client/router";
 import { Toaster } from "../client/components/ui/toaster";
 import "./Main.css";
+import "./css/custom.css";
 import NavBar from "./components/NavBar/NavBar";
 import {
   demoNavigationitems,

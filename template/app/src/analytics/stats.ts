@@ -1,7 +1,7 @@
 import { listOrders } from "@lemonsqueezy/lemonsqueezy.js";
 import Stripe from "stripe";
 import { type DailyStats } from "wasp/entities";
-import { type DailyStatsJob } from "wasp/server/jobs";
+// import { type DailyStatsJob } from "wasp/server/jobs";
 import { stripeClient } from "../payment/stripe/stripeClient";
 import {
   getDailyPageViews,
@@ -20,9 +20,9 @@ export type DailyStatsProps = {
   isLoading?: boolean;
 };
 
-export const calculateDailyStats: DailyStatsJob<never, void> = async (
-  _args,
-  context,
+export const calculateDailyStats: any = async (
+  _args: any,
+  context: any,
 ) => {
   const nowUTC = new Date(Date.now());
   nowUTC.setUTCHours(0, 0, 0, 0);
