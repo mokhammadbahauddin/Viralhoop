@@ -1,18 +1,60 @@
 # Page snapshot
 
 ```yaml
-- generic [ref=e3]:
-  - generic [ref=e4]: "[plugin:vite:css] [postcss] /app/template/app/src/client/css/custom.css:1:1: `@layer utilities` is used but no matching `@tailwind utilities` directive is present."
-  - generic [ref=e5]: /app/template/app/src/client/css/custom.css:1:0
-  - generic [ref=e6]: "1 | @layer utilities { | ^ 2 | .bg-grid-pattern { 3 | background-size: 40px 40px;"
-  - generic [ref=e7]: at Input.error (/app/template/app/node_modules/postcss/lib/input.js:135:16) at AtRule.error (/app/template/app/node_modules/postcss/lib/node.js:146:32) at normalizeTailwindDirectives (/app/template/app/node_modules/tailwindcss/lib/lib/normalizeTailwindDirectives.js:72:32) at /app/template/app/node_modules/tailwindcss/lib/processTailwindFeatures.js:29:98 at plugins (/app/template/app/node_modules/tailwindcss/lib/plugin.js:38:69) at LazyResult.runOnRoot (/app/template/app/node_modules/postcss/lib/lazy-result.js:361:16) at LazyResult.runAsync (/app/template/app/node_modules/postcss/lib/lazy-result.js:290:26) at LazyResult.async (/app/template/app/node_modules/postcss/lib/lazy-result.js:192:30) at LazyResult.then (/app/template/app/node_modules/postcss/lib/lazy-result.js:436:17)
-  - generic [ref=e8]:
-    - text: Click outside, press Esc key, or fix the code to dismiss.
-    - text: You can also disable this overlay by setting
-    - code [ref=e9]: server.hmr.overlay
-    - text: to
-    - code [ref=e10]: "false"
-    - text: in
-    - code [ref=e11]: vite.config.ts
-    - text: .
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - banner [ref=e4]:
+        - navigation "Global" [ref=e6]:
+          - generic [ref=e7]:
+            - link "Your SaaS App Your SaaS" [ref=e8] [cursor=pointer]:
+              - /url: /
+              - img "Your SaaS App" [ref=e9]
+              - generic [ref=e10]: Your SaaS
+            - list [ref=e11]:
+              - listitem [ref=e12]:
+                - link "AI Scheduler" [ref=e13] [cursor=pointer]:
+                  - /url: /demo-app
+              - listitem [ref=e14]:
+                - link "File Upload" [ref=e15] [cursor=pointer]:
+                  - /url: /file-upload
+              - listitem [ref=e16]:
+                - link "Documentation" [ref=e17] [cursor=pointer]:
+                  - /url: https://docs.opensaas.sh
+              - listitem [ref=e18]:
+                - link "Blog" [ref=e19] [cursor=pointer]:
+                  - /url: https://docs.opensaas.sh/blog
+          - generic [ref=e20]:
+            - list [ref=e21]:
+              - generic [ref=e23] [cursor=pointer]:
+                - checkbox [ref=e24]
+                - generic [ref=e25]:
+                  - img [ref=e27]
+                  - img [ref=e34]
+            - link "Log in" [ref=e36] [cursor=pointer]:
+              - /url: /login
+              - generic [ref=e37]:
+                - text: Log in
+                - img [ref=e38]
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - img [ref=e46]
+          - text: Failed to load user data. Try refreshing the page.
+        - generic [ref=e49]: "Details: Network Error"
+    - region "Notifications (F8)":
+      - list
+  - img
+  - dialog "We use cookies" [ref=e50]:
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - heading "We use cookies" [level=2] [ref=e53]
+        - paragraph [ref=e54]: We use cookies primarily for analytics to enhance your experience. By accepting, you agree to our use of these cookies. You can manage your preferences or learn more about our cookie policy.
+      - generic [ref=e56]:
+        - button "Accept all" [ref=e57] [cursor=pointer]
+        - button "Reject all" [ref=e58] [cursor=pointer]
+    - generic [ref=e61]:
+      - link "Privacy Policy" [ref=e62] [cursor=pointer]:
+        - /url: <your-url-here>
+      - link "Terms and Conditions" [ref=e63] [cursor=pointer]:
+        - /url: <your-url-here>
 ```

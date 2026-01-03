@@ -34,9 +34,13 @@ import {
   Bold,
   Italic,
   Link2,
-  Check
+  Check,
+  Zap
 } from 'lucide-react';
 import { AnalyticsView } from './AnalyticsView';
+import { TeamPage } from './TeamPage';
+import { AssetsPage } from './AssetsPage';
+import { SettingsPage } from './SettingsPage';
 
 export default function DashboardPage() {
   const { data: user } = useAuth();
@@ -44,7 +48,12 @@ export default function DashboardPage() {
   const [url, setUrl] = useState('');
   const [mode, setMode] = useState('summary'); // summary, linkedin, twitter, blog
   const [keywords, setKeywords] = useState('');
+
+  // State for result content
   const [generatedContent, setGeneratedContent] = useState('');
+  const [viralScore, setViralScore] = useState<number | null>(null);
+  const [viralReasoning, setViralReasoning] = useState<string | null>(null);
+
   const [isGenerating, setIsGenerating] = useState(false);
 
   const generateContentFn = useAction(generateContent);
@@ -66,9 +75,22 @@ export default function DashboardPage() {
     }
 
     setIsGenerating(true);
+    // Reset previous results
+    setGeneratedContent('');
+    setViralScore(null);
+    setViralReasoning(null);
+
     try {
       const result = await generateContentFn({ url, mode, keywords: mode === 'blog' ? keywords : undefined });
-      setGeneratedContent(result.summary || result.linkedin || result.twitter || result.blog || "");
+
+      // Determine content based on mode (fallback logic preserved)
+      const content = result.summary || result.linkedin || result.twitter || result.blog || "";
+      setGeneratedContent(content);
+
+      // Set Viral Data
+      if (result.viralScore !== undefined) setViralScore(result.viralScore);
+      if (result.viralReasoning) setViralReasoning(result.viralReasoning);
+
       await refetchHistory();
     } catch (error: any) {
       console.error(error);
@@ -99,7 +121,7 @@ export default function DashboardPage() {
       <aside className="w-[280px] bg-white border-r border-zinc-200 flex flex-col z-30 hidden md:flex">
         {/* Header */}
         <div className="p-4 h-14 flex items-center border-b border-zinc-100">
-            <div className="flex items-center gap-2 cursor-pointer">
+            <div className="flex items-center gap-2 cursor-pointer" onClick={() => setActiveTab('home')}>
                 <div className="w-6 h-6 bg-zinc-900 rounded-md flex items-center justify-center text-white shadow-sm">
                     <span className="font-bold text-xs">V</span>
                 </div>
@@ -183,7 +205,7 @@ export default function DashboardPage() {
                 <div className="w-full md:w-[400px] bg-white border-r border-zinc-200 flex flex-col z-10 shadow-[4px_0_24px_-12px_rgba(0,0,0,0.05)]">
                     <div className="h-14 border-b border-zinc-100 flex items-center px-6 justify-between flex-shrink-0">
                         <h2 className="font-semibold text-sm text-zinc-900">Project Setup</h2>
-                        <button className="text-xs text-zinc-400 hover:text-zinc-900 underline" onClick={() => { setUrl(''); setGeneratedContent(''); }}>Reset</button>
+                        <button className="text-xs text-zinc-400 hover:text-zinc-900 underline" onClick={() => { setUrl(''); setGeneratedContent(''); setViralScore(null); setViralReasoning(null); }}>Reset</button>
                     </div>
 
                     <div className="p-6 space-y-6 flex-1 overflow-y-auto">
@@ -254,19 +276,6 @@ export default function DashboardPage() {
                                     />
                                 </div>
                             )}
-
-                            {/* Sliders Mock */}
-                            <div>
-                                <div className="flex justify-between mb-3">
-                                    <label className="text-xs font-medium text-zinc-700">Creativity</label>
-                                    <span className="text-[10px] text-zinc-500 font-mono bg-zinc-100 px-1.5 rounded">0.7</span>
-                                </div>
-                                <input type="range" className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer" />
-                                <div className="flex justify-between mt-1 text-[10px] text-zinc-400">
-                                    <span>Precise</span>
-                                    <span>Creative</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -289,7 +298,7 @@ export default function DashboardPage() {
                     </div>
                 </div>
 
-                {/* Right Panel: Editor */}
+                {/* Right Panel: Editor & Intelligence */}
                 <div className="flex-1 bg-zinc-50 flex flex-col relative overflow-hidden">
                      {/* Toolbar */}
                      <div className="h-14 bg-white border-b border-zinc-200 flex items-center justify-between px-4 shadow-sm z-20 flex-shrink-0">
@@ -312,7 +321,7 @@ export default function DashboardPage() {
                         </div>
                      </div>
 
-                     {/* Editor Canvas */}
+                     {/* Content Area with Split View for Intelligence if needed */}
                      <div className="flex-1 overflow-y-auto p-8 md:p-12 relative scroll-smooth">
                         {!generatedContent ? (
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 animate-enter">
@@ -323,13 +332,40 @@ export default function DashboardPage() {
                                 <p className="text-zinc-500 max-w-sm mt-2 text-sm leading-relaxed">Paste a URL on the left sidebar to start the generation engine.</p>
                             </div>
                         ) : (
-                            <Card className="min-h-[800px] p-12 max-w-3xl mx-auto shadow-sm animate-enter">
-                                <div className="prose prose-zinc max-w-none">
-                                   <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-zinc-600">
-                                     {generatedContent}
-                                   </pre>
-                                </div>
-                            </Card>
+                            <div className="max-w-5xl mx-auto space-y-6">
+                                {/* Viral Score Card */}
+                                {(viralScore !== null && viralScore !== undefined) && (
+                                    <div className="bg-white border border-zinc-200 rounded-xl p-4 flex items-center gap-6 shadow-sm animate-enter">
+                                        <div className="flex items-center gap-3 border-r border-zinc-100 pr-6">
+                                            <div className="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
+                                                <Zap className="w-5 h-5" />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider">Viral Score</p>
+                                                <p className="text-2xl font-bold text-zinc-900">{viralScore}/100</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex-1">
+                                             <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider mb-1">Reasoning</p>
+                                             <p className="text-sm text-zinc-600 leading-snug">{viralReasoning || "Analysis complete."}</p>
+                                        </div>
+                                        {/* Simple Progress Bar */}
+                                        <div className="w-24 h-12 relative flex items-center justify-center">
+                                            <div className="w-full h-2 bg-zinc-100 rounded-full overflow-hidden">
+                                                <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${viralScore}%` }}></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+
+                                <Card className="min-h-[600px] p-12 shadow-sm animate-enter">
+                                    <div className="prose prose-zinc max-w-none">
+                                    <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-zinc-600">
+                                        {generatedContent}
+                                    </pre>
+                                    </div>
+                                </Card>
+                            </div>
                         )}
                         <div className="h-20"></div>
                      </div>
@@ -354,6 +390,7 @@ export default function DashboardPage() {
                                 <tr>
                                     <th className="px-6 py-3">Content Title</th>
                                     <th className="px-6 py-3">Source</th>
+                                    <th className="px-6 py-3">Viral Score</th>
                                     <th className="px-6 py-3">Created</th>
                                     <th className="px-6 py-3 text-right">Action</th>
                                 </tr>
@@ -368,10 +405,23 @@ export default function DashboardPage() {
                                             {item.title || "Untitled Project"}
                                         </td>
                                         <td className="px-6 py-4 text-zinc-500 max-w-xs truncate">{item.sourceUrl}</td>
+                                        <td className="px-6 py-4">
+                                            {item.viralScore ? (
+                                                <span className={cn("px-2 py-0.5 rounded text-xs font-medium",
+                                                    item.viralScore > 80 ? "bg-green-100 text-green-700" :
+                                                    item.viralScore > 50 ? "bg-yellow-100 text-yellow-700" :
+                                                    "bg-zinc-100 text-zinc-600"
+                                                )}>
+                                                    {item.viralScore}
+                                                </span>
+                                            ) : <span className="text-zinc-300">-</span>}
+                                        </td>
                                         <td className="px-6 py-4 text-zinc-500">{new Date(item.createdAt).toLocaleDateString()}</td>
                                         <td className="px-6 py-4 text-right">
                                             <Button variant="ghost" size="sm" onClick={() => {
                                                 setGeneratedContent(item.summary || item.linkedin || item.twitter || item.blog || "");
+                                                setViralScore(item.viralScore);
+                                                setViralReasoning(item.viralReasoning);
                                                 setActiveTab('home');
                                             }}>Load</Button>
                                         </td>
@@ -390,15 +440,50 @@ export default function DashboardPage() {
         {/* VIEW: ANALYTICS */}
         {activeTab === 'analytics' && <AnalyticsView />}
 
-        {/* VIEW: PLACEHOLDERS */}
-        {['templates', 'seo', 'team', 'assets', 'settings'].includes(activeTab) && (
-            <div className="flex-1 bg-zinc-50 p-6 flex items-center justify-center animate-enter">
+        {/* VIEW: TEMPLATES */}
+        {activeTab === 'templates' && (
+            <div className="flex-1 bg-zinc-50 p-8 overflow-y-auto animate-enter">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-2xl font-bold tracking-tight text-zinc-900 mb-2">Templates</h2>
+                    <p className="text-zinc-500 mb-8">Start your next project with a pre-configured workflow.</p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {[
+                            { id: 'linkedin', title: 'Viral LinkedIn Post', desc: 'Optimized for high engagement with hooks and takeaways.', icon: Linkedin, color: 'text-blue-600 bg-blue-50' },
+                            { id: 'twitter', title: 'Twitter Thread', desc: 'Break down complex topics into a 7-tweet thread.', icon: Twitter, color: 'text-sky-500 bg-sky-50' },
+                            { id: 'blog', title: 'SEO Blog Post', desc: 'Long-form content targeted at specific keywords.', icon: FileText, color: 'text-orange-600 bg-orange-50' },
+                        ].map((t) => (
+                            <div key={t.id} onClick={() => { setMode(t.id); setActiveTab('home'); }} className="group bg-white p-6 rounded-xl border border-zinc-200 hover:border-zinc-300 shadow-sm hover:shadow-md transition-all cursor-pointer">
+                                <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center mb-4", t.color)}>
+                                    <t.icon className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-lg font-semibold text-zinc-900 mb-2 group-hover:text-primary transition-colors">{t.title}</h3>
+                                <p className="text-zinc-500 text-sm leading-relaxed">{t.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        )}
+
+        {/* VIEW: TEAM */}
+        {activeTab === 'team' && <TeamPage />}
+
+        {/* VIEW: ASSETS */}
+        {activeTab === 'assets' && <AssetsPage />}
+
+        {/* VIEW: SETTINGS */}
+        {activeTab === 'settings' && <SettingsPage />}
+
+        {/* VIEW: SEO (Still placeholder if needed, or link to Docs) */}
+        {activeTab === 'seo' && (
+             <div className="flex-1 bg-zinc-50 p-6 flex items-center justify-center animate-enter">
                 <div className="text-center">
                     <div className="w-16 h-16 bg-zinc-100 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-zinc-200">
-                        <Lock className="w-6 h-6 text-zinc-300" />
+                        <Search className="w-6 h-6 text-zinc-300" />
                     </div>
-                    <h2 className="text-xl font-semibold text-zinc-900">Feature Coming Soon</h2>
-                    <p className="text-zinc-500 mt-2">This module is currently under development.</p>
+                    <h2 className="text-xl font-semibold text-zinc-900">SEO Intelligence</h2>
+                    <p className="text-zinc-500 mt-2">Advanced keyword tracking coming in the next update.</p>
                 </div>
             </div>
         )}

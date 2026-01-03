@@ -15,11 +15,6 @@ export const generateContent: GenerateContent<
     throw new HttpError(401);
   }
 
-  // 0. Check Plan and Credits
-  // Assuming subscriptionStatus 'active' means Pro. Or we check subscriptionPlan.
-  // Using subscriptionStatus to be safe as per PRD "Use Wasp's user.subscriptionStatus to gate features."
-  // And "Display 'Lock' icons on Pro tabs for free users." - implies Free users are restricted.
-
   const isPro = context.user.subscriptionStatus === 'active';
   const isFreeMode = mode === 'summary';
 
@@ -42,58 +37,99 @@ export const generateContent: GenerateContent<
   }
 
   // 2. Select Prompt
-  let systemPrompt = '';
+  // We now ask for JSON output to parse Viral Score and Content cleanly.
+  // The system prompt should enforce a JSON schema.
+
+  let modeSpecificPrompt = '';
   switch (mode) {
     case 'linkedin':
-      systemPrompt =
-        'Act as a viral LinkedIn ghostwriter. Analyze this transcript. Write a post that starts with a controversial hook, uses punchy <15 word sentences, includes a list of 3 actionable takeaways, and ends with a question.';
+      modeSpecificPrompt =
+        'Act as a viral LinkedIn ghostwriter. Write a post that starts with a controversial hook, uses punchy <15 word sentences, includes a list of 3 actionable takeaways, and ends with a question.';
       break;
     case 'twitter':
-      systemPrompt =
+      modeSpecificPrompt =
         'Act as a Twitter growth expert. Convert this into a thread. Tweet 1: Massive Hook. Tweets 2-6: Value/Insights. Tweet 7: Summary & CTA.';
       break;
     case 'blog':
-      systemPrompt =
+      modeSpecificPrompt =
         `Act as a SEO expert. Write a blog post based on this transcript. Include H1, H2, and relevant keywords.${keywords ? ` Focus on these target keywords: ${keywords}.` : ''}`;
       break;
     case 'summary':
     default:
-      systemPrompt =
+      modeSpecificPrompt =
         'Summarize the following video transcript into bullet points and key insights.';
       break;
   }
 
+  const jsonSchema = `
+  {
+    "content": "The generated content string here...",
+    "viralScore": 85,
+    "viralReasoning": "Short explanation of why this content has high viral potential (e.g. strong hook, emotional resonance)."
+  }
+  `;
+
+  const finalPrompt = `
+    ${modeSpecificPrompt}
+
+    ANALYZE the viral potential of the source material.
+
+    RETURN YOUR RESPONSE AS A VALID JSON OBJECT matching this structure:
+    ${jsonSchema}
+
+    Transcript:
+    ${transcriptText}
+  `;
+
   // 3. Generate Content with Gemini
-  let generatedText = '';
+  let generatedContent = '';
+  let viralScore = 0;
+  let viralReasoning = '';
+
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-    const result = await model.generateContent([systemPrompt, transcriptText]);
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash', generationConfig: { responseMimeType: "application/json" } });
+    const result = await model.generateContent([finalPrompt]);
     const response = await result.response;
-    generatedText = response.text();
+    const jsonText = response.text();
+
+    try {
+      const parsed = JSON.parse(jsonText);
+      generatedContent = parsed.content;
+      viralScore = parsed.viralScore || 0;
+      viralReasoning = parsed.viralReasoning || '';
+    } catch (parseError) {
+      console.error("JSON Parse Error", parseError);
+      // Fallback if model fails to output JSON (rare with responseMimeType but possible)
+      generatedContent = jsonText;
+    }
+
   } catch (error) {
     console.error('Gemini Error:', error);
     throw new HttpError(500, 'AI Generation failed.');
   }
 
   // 4. Save to Database & Deduct Credit
-  // Use a transaction to ensure atomicity
   const [contentHistory] = await prisma.$transaction([
     context.entities.ContentHistory.create({
       data: {
         userId: context.user.id,
-        title: 'New Project', // In a real app, we'd fetch video title
+        title: 'New Project',
         sourceUrl: url,
-        summary: mode === 'summary' ? generatedText : undefined,
-        linkedin: mode === 'linkedin' ? generatedText : undefined,
-        twitter: mode === 'twitter' ? generatedText : undefined,
-        blog: mode === 'blog' ? generatedText : undefined,
+        // Save content to the correct field
+        summary: mode === 'summary' ? generatedContent : undefined,
+        linkedin: mode === 'linkedin' ? generatedContent : undefined,
+        twitter: mode === 'twitter' ? generatedContent : undefined,
+        blog: mode === 'blog' ? generatedContent : undefined,
+
+        viralScore,
+        viralReasoning,
       },
     }),
     context.entities.User.update({
       where: { id: context.user.id },
       data: {
         credits: {
-          decrement: isPro ? 0 : 1, // Only deduct if not pro
+          decrement: isPro ? 0 : 1,
         },
       },
     }),

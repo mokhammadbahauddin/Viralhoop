@@ -26,6 +26,8 @@ The "Vertex" theme is **Industrial, Clean, and Data-Dense**. It is built for pro
     * Base: `h-10 w-full rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm placeholder:text-zinc-400 focus:bg-white focus:outline-none`.
 * **Cards:**
     * `bg-white border border-zinc-200 shadow-sm rounded-xl overflow-hidden`.
+* **Badges/Tags:**
+    * `bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded text-xs font-medium border border-zinc-200`.
 
 ## 4. Wasp Framework Specifics
 * **Data Fetching:** Do NOT use `useEffect` for data. Use `useQuery(getHistory)` from Wasp.
@@ -35,6 +37,9 @@ The "Vertex" theme is **Industrial, Clean, and Data-Dense**. It is built for pro
 
 ## 5. Gemini Integration Strategy
 * **Action Definition:** Define the AI generation as a Wasp Action in `src/actions.ts`.
+* **Prompt Engineering:**
+    *   Use `responseMimeType: "application/json"` to enforce structured output.
+    *   Include schema definitions in the system prompt.
 * **Error Handling:** YouTube transcripts can fail (no captions). Wrap in try/catch and return specific error messages to the client ("No captions found").
 
 ## 6. Code Patterns
