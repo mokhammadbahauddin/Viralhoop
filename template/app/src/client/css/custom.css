@@ -7,15 +7,34 @@
     background-size: 40px 40px;
     background-image: linear-gradient(to right, rgba(24, 24, 27, 0.05) 1px, transparent 1px),
                       linear-gradient(to bottom, rgba(24, 24, 27, 0.05) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(228, 228, 231, 0.6);
   }
 
   .animate-enter {
     animation: enter 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
 
+  .shimmer {
+    background: linear-gradient(to right, #f4f4f5 8%, #e4e4e7 18%, #f4f4f5 33%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+  }
+
   @keyframes enter {
     from { opacity: 0; transform: translateY(10px) scale(0.99); }
     to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
   }
 
   /* Custom Scrollbar */

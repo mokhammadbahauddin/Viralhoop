@@ -74,7 +74,7 @@ export default function DashboardPage() {
         toast({
             title: "Pro Feature",
             description: "Upgrade to Pro to unlock LinkedIn, Twitter, and Blog modes.",
-            variant: "destructive" // Or default with icon
+            variant: "destructive"
         });
         return;
     }
@@ -96,11 +96,9 @@ export default function DashboardPage() {
     try {
       const result = await generateContentFn({ url, mode, keywords: mode === 'blog' ? keywords : undefined });
 
-      // Determine content based on mode (fallback logic preserved)
       const content = result.summary || result.linkedin || result.twitter || result.blog || "";
       setGeneratedContent(content);
 
-      // Set Viral Data
       if (result.viralScore !== undefined) setViralScore(result.viralScore);
       if (result.viralReasoning) setViralReasoning(result.viralReasoning);
 
@@ -359,7 +357,7 @@ export default function DashboardPage() {
 
                      {/* Content Area with Split View for Intelligence if needed */}
                      <div className="flex-1 overflow-y-auto p-8 md:p-12 relative scroll-smooth">
-                        {!generatedContent ? (
+                        {!generatedContent && !isGenerating && (
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 animate-enter">
                                 <div className="w-24 h-24 bg-gradient-to-b from-zinc-50 to-zinc-100 border border-zinc-200 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
                                     <Layout className="w-8 h-8 text-zinc-300" />
@@ -367,7 +365,32 @@ export default function DashboardPage() {
                                 <h3 className="text-lg font-semibold text-zinc-900">Workspace Ready</h3>
                                 <p className="text-zinc-500 max-w-sm mt-2 text-sm leading-relaxed">Paste a URL on the left sidebar to start the generation engine.</p>
                             </div>
-                        ) : (
+                        )}
+
+                        {isGenerating && (
+                            <div className="max-w-2xl mx-auto mt-20 animate-enter">
+                                <div className="border border-zinc-200 bg-white p-6 rounded-xl shadow-sm mb-6 flex items-center gap-4">
+                                    <Loader2 className="w-12 h-12 text-zinc-900 animate-spin" />
+                                    <div className="flex-1">
+                                        <div className="flex justify-between mb-2">
+                                            <h3 className="text-sm font-semibold text-zinc-900">Analyzing Content...</h3>
+                                        </div>
+                                        <div className="h-1.5 w-full bg-zinc-100 rounded-full overflow-hidden">
+                                            <div className="h-full bg-zinc-900 w-1/3 rounded-full animate-pulse"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="space-y-4 px-2">
+                                    <div className="h-8 shimmer rounded w-1/3 mb-6"></div>
+                                    <div className="h-4 shimmer rounded w-full"></div>
+                                    <div className="h-4 shimmer rounded w-full"></div>
+                                    <div className="h-4 shimmer rounded w-5/6"></div>
+                                    <div className="h-32 shimmer rounded w-full mt-6"></div>
+                                </div>
+                            </div>
+                        )}
+
+                        {generatedContent && !isGenerating && (
                             <div className="max-w-5xl mx-auto space-y-6">
                                 {/* Viral Score Card */}
                                 {(viralScore !== null && viralScore !== undefined) && (

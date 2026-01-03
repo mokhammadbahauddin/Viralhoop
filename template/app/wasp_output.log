@@ -3360,3 +3360,1412 @@
 [33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
 [33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
 [33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 8:45:25 AM [vite] (client) hmr update /@fs/app/template/app/src/client/css/custom.css
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+
+[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+[33m
+✅ --- Database successfully set up. ----------------------------------------------
+[0m
+[33m
+🐝 --- Building SDK... ------------------------------------------------------------
+[0m
+
+[33m[[0m  [33mWasp[0m  [33m][0m > wasp@1.0.0 build
+[33m[[0m  [33mWasp[0m  [33m][0m > tsc && node ./scripts/copy-assets.js
+[33m[[0m  [33mWasp[0m  [33m][0m
+[36m[[0m [36mClient[0m [36m][0m 8:46:10 AM [vite] (client) hmr update /@fs/app/template/app/src/client/pages/dashboard/DashboardPage.tsx, /@fs/app/template/app/src/client/Main.css, /@fs/app/template/app/src/client/css/custom.css
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(126,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m src/client/pages/dashboard/SettingsPage.tsx(143,29): error TS2322: Type '"default" | "secondary"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.
+[33m[[0m  [33mWasp[0m  [33m][0m   Type '"default"' is not assignable to type '"primary" | "secondary" | "ghost" | undefined'.[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+[31m
+
+❌ --- [Error] Recompilation on file change failed.: ------------------------------
+
+1 errors found[0m
+[33m
+🐝 --- Recompiling on file change... ----------------------------------------------
+[0m
+
+[31m
+
+❌ --- [Error] Your wasp project failed to compile: -------------------------------
+
+- SDK build failed with exit code: 2[0m
+
+[33m
+✅ --- Successfully completed npm install. ----------------------------------------
+[0m
+[33m
+🐝 --- Setting up database... -----------------------------------------------------
+[0m
+
+[36m[[0m [36mClient[0m [36m][0m 8:46:16 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/env/validation.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Signup.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Login.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/ForgotPassword.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/Auth.module.css
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/VerifyEmail.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/util.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.module.css
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/email/VerifyEmailForm.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/email/useEmail.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/email/ResetPasswordForm.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/email/ForgotPasswordForm.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Message.module.css
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/Form.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/auth-styles.css
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/internal/common/LoginSignupForm.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/types.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/auth/forms/ResetPassword.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/email/actions/verifyEmail.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/email/actions/login.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/email/actions/passwordReset.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/email/actions/signup.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/helpers/user.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/user.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/logout.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/auth/useAuth.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/core/serialization/custom-register.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/core/serialization/prisma.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/core/serialization/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:17 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/core/storage.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/env/schema.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/hooks.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/env.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/auth/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/auth/ui.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/auth/email.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/config.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/router/linkHelpers.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) hmr update /@fs/app/template/app/.wasp/out/sdk/wasp/dist/client/router/Link.jsx
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/router/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/hooks.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/queryClient.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/queries/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/queries/core.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/actions/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/actions/core.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/internal/updateHandlersMap.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/internal/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/operations/internal/resources.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/client/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/api/events.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/api/index.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/universal/url.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/universal/ansiColors.js
+[36m[[0m [36mClient[0m [36m][0m 8:46:18 AM [vite] (client) page reload /app/template/app/.wasp/out/sdk/wasp/dist/universal/predicates.js
